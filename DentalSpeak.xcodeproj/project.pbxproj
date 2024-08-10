@@ -27,6 +27,7 @@
 		DCF4DA452C67B20B00220E2F /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA442C67B20B00220E2F /* FlashcardView.swift */; };
 		DCF4DA472C67B22300220E2F /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA462C67B22300220E2F /* ListItemView.swift */; };
 		DCF4DA492C67B24D00220E2F /* TermsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA482C67B24D00220E2F /* TermsListView.swift */; };
+		DCF4DA4B2C67B4C900220E2F /* PhrasesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA4A2C67B4C900220E2F /* PhrasesListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		DCF4DA442C67B20B00220E2F /* FlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardView.swift; sourceTree = "<group>"; };
 		DCF4DA462C67B22300220E2F /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		DCF4DA482C67B24D00220E2F /* TermsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsListView.swift; sourceTree = "<group>"; };
+		DCF4DA4A2C67B4C900220E2F /* PhrasesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasesListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				DCF4DA442C67B20B00220E2F /* FlashcardView.swift */,
 				DCF4DA462C67B22300220E2F /* ListItemView.swift */,
 				DCF4DA482C67B24D00220E2F /* TermsListView.swift */,
+				DCF4DA4A2C67B4C900220E2F /* PhrasesListView.swift */,
 			);
 			path = DentalSpeak;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				DC70C6232C66F8B100D88A3B /* SideMenuView.swift in Sources */,
 				DCF4DA452C67B20B00220E2F /* FlashcardView.swift in Sources */,
 				DC70C6252C66F9A200D88A3B /* SideMenuHeaderView.swift in Sources */,
+				DCF4DA4B2C67B4C900220E2F /* PhrasesListView.swift in Sources */,
 				DCF4DA472C67B22300220E2F /* ListItemView.swift in Sources */,
 				DCF4DA3D2C67B13900220E2F /* FlashcardViewModel.swift in Sources */,
 				DCF4DA3B2C67B0ED00220E2F /* PlaybackButton.swift in Sources */,

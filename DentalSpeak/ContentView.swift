@@ -16,13 +16,13 @@ struct ContentView: View {
             ZStack {
                 
                 TabView(selection: $selectedTab) {
-                    Text("Terms")
+                    TermsListView()
                         .tag(0)
                     
-                    Text("Phrases")
+                    PhrasesListView()
                         .tag(1)
                     
-                    Text("Flashcards")
+                    FlashcardDecksView()
                         .tag(2)
                 }
                 

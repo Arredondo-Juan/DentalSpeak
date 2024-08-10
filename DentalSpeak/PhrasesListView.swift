@@ -1,5 +1,5 @@
 //
-//  TermsListView.swift
+//  PhrasesListView.swift
 //  DentalSpeak
 //
 //  Created by Juan Arredondo on 8/10/24.
@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct TermsListView: View {
+struct PhrasesListView: View {
     @EnvironmentObject var viewModel: FlashcardViewModel
     @State private var searchText = ""
 
-    var filteredTerms: [Flashcard] {
-        viewModel.termsDeck
+
+    var filteredPhrases: [Flashcard] {
+        viewModel.phrasesDeck
             .filter { $0.term.localizedCaseInsensitiveContains(searchText) || searchText.isEmpty }
             .sorted { $0.term.localizedCompare($1.term) == .orderedAscending }
     }
@@ -20,8 +21,8 @@ struct TermsListView: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Terms - Tap to hear translation")) {
-                    ForEach(filteredTerms) { flashcard in
+                Section(header: Text("Phrases - Tap to hear translation")) {
+                    ForEach(filteredPhrases) { flashcard in
                         ListItemView(term: flashcard.term, definition: flashcard.definition) {
                             viewModel.speak(flashcard.definition)
                         }
@@ -29,7 +30,7 @@ struct TermsListView: View {
                     }
                 }
             }
-            .navigationTitle("Terms")
+            .navigationTitle("Phrases")
             .searchable(text: $searchText)
             .listStyle(PlainListStyle())
         }
