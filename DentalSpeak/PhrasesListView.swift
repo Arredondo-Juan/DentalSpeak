@@ -21,7 +21,7 @@ struct PhrasesListView: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Phrases - Tap to hear translation")) {
+                Section(header: Text("Tap to hear translation")) {
                     ForEach(filteredPhrases) { flashcard in
                         ListItemView(term: flashcard.term, definition: flashcard.definition) {
                             viewModel.speak(flashcard.definition)
@@ -30,7 +30,7 @@ struct PhrasesListView: View {
                     }
                 }
             }
-            .navigationTitle("Phrases")
+//            .navigationTitle("Phrases")
             .searchable(text: $searchText)
             .listStyle(PlainListStyle())
         }

@@ -20,16 +20,18 @@ struct TermsListView: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Terms - Tap to hear translation")) {
+                Section(header: Text("Tap to hear translation")) {
                     ForEach(filteredTerms) { flashcard in
                         ListItemView(term: flashcard.term, definition: flashcard.definition) {
                             viewModel.speak(flashcard.definition)
                         }
+                        
                         .listRowSeparator(.hidden)
                     }
                 }
             }
-            .navigationTitle("Terms")
+            
+//            .navigationTitle("Terms")
             .searchable(text: $searchText)
             .listStyle(PlainListStyle())
         }

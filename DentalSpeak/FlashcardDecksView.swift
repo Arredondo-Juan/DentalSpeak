@@ -31,9 +31,9 @@ struct FlashcardDecksView: View {
                             .opacity(0.6))
                     }
                 }
-                .navigationTitle("Study Flashcards")
-                .navigationBarTitleDisplayMode(.large)
-                .padding()
+//                .navigationTitle("Flashcards")
+//                .navigationBarTitleDisplayMode(.large)
+//                .padding()
             }
         }
     }

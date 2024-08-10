@@ -14,7 +14,6 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                
                 TabView(selection: $selectedTab) {
                     TermsListView()
                         .tag(0)
@@ -25,11 +24,10 @@ struct ContentView: View {
                     FlashcardDecksView()
                         .tag(2)
                 }
-                
                 SideMenuView(isShowing: $showMenu, selectedTab: $selectedTab)
             }
             .toolbar(showMenu ? .hidden : .visible, for: .navigationBar)
-            .navigationTitle("Terms")
+            .navigationTitle(currentTitle)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
@@ -43,6 +41,19 @@ struct ContentView: View {
             }
         }
     }
+    
+        private var currentTitle: String {
+            switch selectedTab {
+            case 0:
+                return "Terms"
+            case 1:
+                return "Phrases"
+            case 2:
+                return "Flashcards"
+            default:
+                return "Terms"
+            }
+        }
 }
 
 #Preview {
