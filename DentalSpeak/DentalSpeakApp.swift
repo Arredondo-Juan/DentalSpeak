@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct DentalSpeakApp: App {
+    @StateObject private var flashcardViewModel = FlashcardViewModel()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(flashcardViewModel)
         }
     }
 }
+
