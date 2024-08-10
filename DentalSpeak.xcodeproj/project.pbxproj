@@ -15,6 +15,18 @@
 		DC70C6252C66F9A200D88A3B /* SideMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70C6242C66F9A200D88A3B /* SideMenuHeaderView.swift */; };
 		DC70C6272C6701DE00D88A3B /* SideMenuRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70C6262C6701DE00D88A3B /* SideMenuRowView.swift */; };
 		DC70C6292C6702B600D88A3B /* SideMenuOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70C6282C6702B600D88A3B /* SideMenuOptionModel.swift */; };
+		DCF4DA332C67AF7500220E2F /* dentalspanishdata.json in Resources */ = {isa = PBXBuildFile; fileRef = DCF4DA322C67AF7500220E2F /* dentalspanishdata.json */; };
+		DCF4DA352C67B07A00220E2F /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA342C67B07A00220E2F /* Flashcard.swift */; };
+		DCF4DA372C67B09000220E2F /* DeckType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA362C67B09000220E2F /* DeckType.swift */; };
+		DCF4DA392C67B0A900220E2F /* SpeechSynthesizerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA382C67B0A900220E2F /* SpeechSynthesizerManager.swift */; };
+		DCF4DA3B2C67B0ED00220E2F /* PlaybackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA3A2C67B0ED00220E2F /* PlaybackButton.swift */; };
+		DCF4DA3D2C67B13900220E2F /* FlashcardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA3C2C67B13900220E2F /* FlashcardViewModel.swift */; };
+		DCF4DA3F2C67B1AB00220E2F /* DraggableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA3E2C67B1AB00220E2F /* DraggableCardView.swift */; };
+		DCF4DA412C67B1D100220E2F /* FlashcardDecksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA402C67B1D100220E2F /* FlashcardDecksView.swift */; };
+		DCF4DA432C67B1F600220E2F /* FlashcardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA422C67B1F600220E2F /* FlashcardListView.swift */; };
+		DCF4DA452C67B20B00220E2F /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA442C67B20B00220E2F /* FlashcardView.swift */; };
+		DCF4DA472C67B22300220E2F /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA462C67B22300220E2F /* ListItemView.swift */; };
+		DCF4DA492C67B24D00220E2F /* TermsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA482C67B24D00220E2F /* TermsListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +39,18 @@
 		DC70C6242C66F9A200D88A3B /* SideMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeaderView.swift; sourceTree = "<group>"; };
 		DC70C6262C6701DE00D88A3B /* SideMenuRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuRowView.swift; sourceTree = "<group>"; };
 		DC70C6282C6702B600D88A3B /* SideMenuOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionModel.swift; sourceTree = "<group>"; };
+		DCF4DA322C67AF7500220E2F /* dentalspanishdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dentalspanishdata.json; sourceTree = "<group>"; };
+		DCF4DA342C67B07A00220E2F /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
+		DCF4DA362C67B09000220E2F /* DeckType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckType.swift; sourceTree = "<group>"; };
+		DCF4DA382C67B0A900220E2F /* SpeechSynthesizerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizerManager.swift; sourceTree = "<group>"; };
+		DCF4DA3A2C67B0ED00220E2F /* PlaybackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackButton.swift; sourceTree = "<group>"; };
+		DCF4DA3C2C67B13900220E2F /* FlashcardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewModel.swift; sourceTree = "<group>"; };
+		DCF4DA3E2C67B1AB00220E2F /* DraggableCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableCardView.swift; sourceTree = "<group>"; };
+		DCF4DA402C67B1D100220E2F /* FlashcardDecksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardDecksView.swift; sourceTree = "<group>"; };
+		DCF4DA422C67B1F600220E2F /* FlashcardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardListView.swift; sourceTree = "<group>"; };
+		DCF4DA442C67B20B00220E2F /* FlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardView.swift; sourceTree = "<group>"; };
+		DCF4DA462C67B22300220E2F /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
+		DCF4DA482C67B24D00220E2F /* TermsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +83,11 @@
 		DC70C6132C66F55F00D88A3B /* DentalSpeak */ = {
 			isa = PBXGroup;
 			children = (
+				DCF4DA2E2C67AEA800220E2F /* Components */,
+				DCF4DA302C67AEC200220E2F /* Models */,
+				DCF4DA312C67AF2D00220E2F /* Resources */,
+				DCF4DA2F2C67AEB900220E2F /* ViewModels */,
+				DCF4DA2D2C67AE9F00220E2F /* Views */,
 				DC70C6142C66F55F00D88A3B /* DentalSpeakApp.swift */,
 				DC70C6162C66F55F00D88A3B /* ContentView.swift */,
 				DC70C6182C66F56100D88A3B /* Assets.xcassets */,
@@ -67,6 +96,12 @@
 				DC70C6242C66F9A200D88A3B /* SideMenuHeaderView.swift */,
 				DC70C6262C6701DE00D88A3B /* SideMenuRowView.swift */,
 				DC70C6282C6702B600D88A3B /* SideMenuOptionModel.swift */,
+				DCF4DA3E2C67B1AB00220E2F /* DraggableCardView.swift */,
+				DCF4DA402C67B1D100220E2F /* FlashcardDecksView.swift */,
+				DCF4DA422C67B1F600220E2F /* FlashcardListView.swift */,
+				DCF4DA442C67B20B00220E2F /* FlashcardView.swift */,
+				DCF4DA462C67B22300220E2F /* ListItemView.swift */,
+				DCF4DA482C67B24D00220E2F /* TermsListView.swift */,
 			);
 			path = DentalSpeak;
 			sourceTree = "<group>";
@@ -77,6 +112,47 @@
 				DC70C61B2C66F56100D88A3B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DCF4DA2D2C67AE9F00220E2F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DCF4DA2E2C67AEA800220E2F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DCF4DA3A2C67B0ED00220E2F /* PlaybackButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		DCF4DA2F2C67AEB900220E2F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DCF4DA3C2C67B13900220E2F /* FlashcardViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DCF4DA302C67AEC200220E2F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DCF4DA342C67B07A00220E2F /* Flashcard.swift */,
+				DCF4DA362C67B09000220E2F /* DeckType.swift */,
+				DCF4DA382C67B0A900220E2F /* SpeechSynthesizerManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DCF4DA312C67AF2D00220E2F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DCF4DA322C67AF7500220E2F /* dentalspanishdata.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC70C61C2C66F56100D88A3B /* Preview Assets.xcassets in Resources */,
+				DCF4DA332C67AF7500220E2F /* dentalspanishdata.json in Resources */,
 				DC70C6192C66F56100D88A3B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,11 +227,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC70C6232C66F8B100D88A3B /* SideMenuView.swift in Sources */,
+				DCF4DA452C67B20B00220E2F /* FlashcardView.swift in Sources */,
 				DC70C6252C66F9A200D88A3B /* SideMenuHeaderView.swift in Sources */,
+				DCF4DA472C67B22300220E2F /* ListItemView.swift in Sources */,
+				DCF4DA3D2C67B13900220E2F /* FlashcardViewModel.swift in Sources */,
+				DCF4DA3B2C67B0ED00220E2F /* PlaybackButton.swift in Sources */,
+				DCF4DA3F2C67B1AB00220E2F /* DraggableCardView.swift in Sources */,
+				DCF4DA372C67B09000220E2F /* DeckType.swift in Sources */,
 				DC70C6292C6702B600D88A3B /* SideMenuOptionModel.swift in Sources */,
+				DCF4DA432C67B1F600220E2F /* FlashcardListView.swift in Sources */,
 				DC70C6272C6701DE00D88A3B /* SideMenuRowView.swift in Sources */,
 				DC70C6172C66F55F00D88A3B /* ContentView.swift in Sources */,
+				DCF4DA392C67B0A900220E2F /* SpeechSynthesizerManager.swift in Sources */,
 				DC70C6152C66F55F00D88A3B /* DentalSpeakApp.swift in Sources */,
+				DCF4DA352C67B07A00220E2F /* Flashcard.swift in Sources */,
+				DCF4DA492C67B24D00220E2F /* TermsListView.swift in Sources */,
+				DCF4DA412C67B1D100220E2F /* FlashcardDecksView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
