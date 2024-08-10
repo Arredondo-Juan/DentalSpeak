@@ -8,14 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showMenu = false
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            ZStack {
+                
+                VStack {
+                    // MARK: Main body for view
+                    Image(systemName: "globe")
+                        .imageScale(.large)
+                        .foregroundStyle(.tint)
+                    Text("Hello, world!")
+                }
+                
+                SideMenuView(isShowing: $showMenu)
+            }
+            .toolbar(showMenu ? .hidden : .visible, for: .navigationBar)
+            .navigationTitle("Terms")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: {
+                        showMenu.toggle()
+                    }, label: {
+                        Image(systemName: "line.3.horizontal")
+                            .foregroundStyle(Color.black)
+                    })
+                }
+            }
         }
-        .padding()
     }
 }
 

@@ -11,6 +11,8 @@
 		DC70C6172C66F55F00D88A3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70C6162C66F55F00D88A3B /* ContentView.swift */; };
 		DC70C6192C66F56100D88A3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC70C6182C66F56100D88A3B /* Assets.xcassets */; };
 		DC70C61C2C66F56100D88A3B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC70C61B2C66F56100D88A3B /* Preview Assets.xcassets */; };
+		DC70C6232C66F8B100D88A3B /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70C6222C66F8B100D88A3B /* SideMenuView.swift */; };
+		DC70C6252C66F9A200D88A3B /* SideMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70C6242C66F9A200D88A3B /* SideMenuHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		DC70C6162C66F55F00D88A3B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DC70C6182C66F56100D88A3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC70C61B2C66F56100D88A3B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DC70C6222C66F8B100D88A3B /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		DC70C6242C66F9A200D88A3B /* SideMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 				DC70C6162C66F55F00D88A3B /* ContentView.swift */,
 				DC70C6182C66F56100D88A3B /* Assets.xcassets */,
 				DC70C61A2C66F56100D88A3B /* Preview Content */,
+				DC70C6222C66F8B100D88A3B /* SideMenuView.swift */,
+				DC70C6242C66F9A200D88A3B /* SideMenuHeaderView.swift */,
 			);
 			path = DentalSpeak;
 			sourceTree = "<group>";
@@ -137,6 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC70C6232C66F8B100D88A3B /* SideMenuView.swift in Sources */,
+				DC70C6252C66F9A200D88A3B /* SideMenuHeaderView.swift in Sources */,
 				DC70C6172C66F55F00D88A3B /* ContentView.swift in Sources */,
 				DC70C6152C66F55F00D88A3B /* DentalSpeakApp.swift in Sources */,
 			);
