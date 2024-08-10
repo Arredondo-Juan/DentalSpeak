@@ -9,19 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var showMenu = false
+    @State private var selectedTab = 0
+    
     var body: some View {
         NavigationStack {
             ZStack {
                 
-                VStack {
-                    // MARK: Main body for view
-                    Image(systemName: "globe")
-                        .imageScale(.large)
-                        .foregroundStyle(.tint)
-                    Text("Hello, world!")
+                TabView(selection: $selectedTab) {
+                    Text("Terms")
+                        .tag(0)
+                    
+                    Text("Phrases")
+                        .tag(1)
+                    
+                    Text("Flashcards")
+                        .tag(2)
                 }
                 
-                SideMenuView(isShowing: $showMenu)
+                SideMenuView(isShowing: $showMenu, selectedTab: $selectedTab)
             }
             .toolbar(showMenu ? .hidden : .visible, for: .navigationBar)
             .navigationTitle("Terms")
