@@ -1,8 +1,8 @@
 //
 //  SideMenuSections.swift
-//  SideMenuTemplate
+//  DentalSpeak
 //
-//  Created by Stephan Dowless on 1/17/24.
+//  Created by Juan Arredondo on 8/12/24.
 //
 
 import Foundation
@@ -27,7 +27,7 @@ enum SideMenuSections: Int, CaseIterable {
         case .other:
             return []
         }
-    }    
+    }
 }
 
 extension SideMenuSections: Identifiable {

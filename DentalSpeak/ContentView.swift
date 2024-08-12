@@ -9,51 +9,49 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var showMenu = false
-    @State private var selectedTab = 0
+    @State private var selectedMenuOption: SideMenuOptionsModel?
     
     var body: some View {
         NavigationStack {
             ZStack {
-                TabView(selection: $selectedTab) {
+                VStack {
                     TermsListView()
-                        .tag(0)
-                    
-                    PhrasesListView()
-                        .tag(1)
-                    
-                    FlashcardDecksView()
-                        .tag(2)
                 }
-                SideMenuView(isShowing: $showMenu, selectedTab: $selectedTab)
+                
+                SideMenuView(isShowing: $showMenu, selectedOption: $selectedMenuOption)
             }
-            .toolbar(showMenu ? .hidden : .visible, for: .navigationBar)
-            .navigationTitle(currentTitle)
+            .navigationDestination(for: SideMenuOptionsModel.self, destination: { option in
+                navigationDestination(for: option)
+            })
+            .onAppear { showMenu = false }
+            .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar(showMenu ? .hidden : .visible, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Button(action: {
+                    Button {
                         showMenu.toggle()
-                    }, label: {
+                    } label: {
                         Image(systemName: "line.3.horizontal")
-                            .foregroundStyle(Color.black)
-                    })
+                            .foregroundStyle(.primary)
+                    }
                 }
             }
         }
     }
-    
-        private var currentTitle: String {
-            switch selectedTab {
-            case 0:
-                return "Terms"
-            case 1:
-                return "Phrases"
-            case 2:
-                return "Flashcards"
-            default:
-                return "Terms"
-            }
+}
+
+private extension ContentView {
+    func navigationDestination(for option: SideMenuOptionsModel) -> AnyView {
+        switch option {
+        case .terms:
+            AnyView(TermsListView())
+        case .phrases:
+            AnyView(PhrasesListView())
+        case .flashcards:
+            AnyView(FlashcardDecksView())
         }
+    }
 }
 
 #Preview {

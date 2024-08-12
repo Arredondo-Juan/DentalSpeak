@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SideMenuOptionModel: Int, CaseIterable {
+enum SideMenuOptionsModel: Int, CaseIterable {
     
     case terms
     case phrases
@@ -36,6 +36,6 @@ enum SideMenuOptionModel: Int, CaseIterable {
     }
 }
 
-extension SideMenuOptionModel: Identifiable {
+extension SideMenuOptionsModel: Identifiable {
     var id: Int { return self.rawValue}
 }

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SideMenuRowView: View {
-    let option: SideMenuOptionModel
-    @Binding var selectedOption: SideMenuOptionModel?
+    let option: SideMenuOptionsModel
+    @Binding var selectedOption: SideMenuOptionsModel?
     
     private var isSelected: Bool {
         return selectedOption == option
@@ -19,19 +19,20 @@ struct SideMenuRowView: View {
         HStack {
             Image(systemName: option.systemImageName)
                 .imageScale(.small)
+            
             Text(option.title)
                 .font(.subheadline)
             
             Spacer()
         }
         .padding(.leading)
-        .foregroundStyle(isSelected ? .blue : .primary)
+        .foregroundStyle(isSelected ? .primaryAccent : .primary)
         .frame(width: 216, height: 44)
-        .background(isSelected ? .gray.opacity(0.15) : .clear)
-        .clipShape(RoundedRectangle(cornerRadius: 15))
+        .background(isSelected ? .menuSelection : .clear)
+        .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
 
 #Preview {
-    SideMenuRowView(option: .flashcards, selectedOption: .constant(.flashcards))
+    SideMenuRowView(option: .terms, selectedOption: .constant(.terms))
 }

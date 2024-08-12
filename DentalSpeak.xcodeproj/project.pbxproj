@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC060FB92C6A61B100FA8F6F /* SideMenuSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC060FB82C6A61B100FA8F6F /* SideMenuSections.swift */; };
+		DC060FBB2C6A627700FA8F6F /* SideMenuSectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC060FBA2C6A627700FA8F6F /* SideMenuSectionsView.swift */; };
 		DC70C6152C66F55F00D88A3B /* DentalSpeakApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70C6142C66F55F00D88A3B /* DentalSpeakApp.swift */; };
 		DC70C6172C66F55F00D88A3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70C6162C66F55F00D88A3B /* ContentView.swift */; };
 		DC70C6192C66F56100D88A3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC70C6182C66F56100D88A3B /* Assets.xcassets */; };
@@ -14,7 +16,7 @@
 		DC70C6232C66F8B100D88A3B /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70C6222C66F8B100D88A3B /* SideMenuView.swift */; };
 		DC70C6252C66F9A200D88A3B /* SideMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70C6242C66F9A200D88A3B /* SideMenuHeaderView.swift */; };
 		DC70C6272C6701DE00D88A3B /* SideMenuRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70C6262C6701DE00D88A3B /* SideMenuRowView.swift */; };
-		DC70C6292C6702B600D88A3B /* SideMenuOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70C6282C6702B600D88A3B /* SideMenuOptionModel.swift */; };
+		DC70C6292C6702B600D88A3B /* SideMenuOptionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70C6282C6702B600D88A3B /* SideMenuOptionsModel.swift */; };
 		DCCAFA1D2C69B15400160A7F /* PlaybackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCAFA1C2C69B15300160A7F /* PlaybackButton.swift */; };
 		DCF4DA332C67AF7500220E2F /* dentalspanishdata.json in Resources */ = {isa = PBXBuildFile; fileRef = DCF4DA322C67AF7500220E2F /* dentalspanishdata.json */; };
 		DCF4DA352C67B07A00220E2F /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA342C67B07A00220E2F /* Flashcard.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC060FB82C6A61B100FA8F6F /* SideMenuSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SideMenuSections.swift; path = DentalSpeak/SideMenuSections.swift; sourceTree = SOURCE_ROOT; };
+		DC060FBA2C6A627700FA8F6F /* SideMenuSectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuSectionsView.swift; sourceTree = "<group>"; };
 		DC70C6112C66F55F00D88A3B /* DentalSpeak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DentalSpeak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC70C6142C66F55F00D88A3B /* DentalSpeakApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentalSpeakApp.swift; sourceTree = "<group>"; };
 		DC70C6162C66F55F00D88A3B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,7 +43,7 @@
 		DC70C6222C66F8B100D88A3B /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		DC70C6242C66F9A200D88A3B /* SideMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeaderView.swift; sourceTree = "<group>"; };
 		DC70C6262C6701DE00D88A3B /* SideMenuRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuRowView.swift; sourceTree = "<group>"; };
-		DC70C6282C6702B600D88A3B /* SideMenuOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionModel.swift; sourceTree = "<group>"; };
+		DC70C6282C6702B600D88A3B /* SideMenuOptionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionsModel.swift; sourceTree = "<group>"; };
 		DCCAFA1C2C69B15300160A7F /* PlaybackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackButton.swift; sourceTree = "<group>"; };
 		DCF4DA322C67AF7500220E2F /* dentalspanishdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dentalspanishdata.json; sourceTree = "<group>"; };
 		DCF4DA342C67B07A00220E2F /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
@@ -66,6 +70,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC060FB32C6A603F00FA8F6F /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				DC060FB42C6A60D000FA8F6F /* Model */,
+				DC060FB52C6A60DA00FA8F6F /* View */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		DC060FB42C6A60D000FA8F6F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DC70C6282C6702B600D88A3B /* SideMenuOptionsModel.swift */,
+				DC060FB82C6A61B100FA8F6F /* SideMenuSections.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DC060FB52C6A60DA00FA8F6F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DC060FB62C6A613C00FA8F6F /* Components */,
+				DC060FB72C6A615300FA8F6F /* Main */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DC060FB62C6A613C00FA8F6F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DC70C6242C66F9A200D88A3B /* SideMenuHeaderView.swift */,
+				DC70C6262C6701DE00D88A3B /* SideMenuRowView.swift */,
+				DC060FBA2C6A627700FA8F6F /* SideMenuSectionsView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		DC060FB72C6A615300FA8F6F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DC70C6222C66F8B100D88A3B /* SideMenuView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		DC70C6082C66F55F00D88A3B = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +134,7 @@
 		DC70C6132C66F55F00D88A3B /* DentalSpeak */ = {
 			isa = PBXGroup;
 			children = (
+				DC060FB32C6A603F00FA8F6F /* SideMenu */,
 				DCF4DA2E2C67AEA800220E2F /* Components */,
 				DCF4DA302C67AEC200220E2F /* Models */,
 				DCF4DA312C67AF2D00220E2F /* Resources */,
@@ -94,10 +144,6 @@
 				DC70C6162C66F55F00D88A3B /* ContentView.swift */,
 				DC70C6182C66F56100D88A3B /* Assets.xcassets */,
 				DC70C61A2C66F56100D88A3B /* Preview Content */,
-				DC70C6222C66F8B100D88A3B /* SideMenuView.swift */,
-				DC70C6242C66F9A200D88A3B /* SideMenuHeaderView.swift */,
-				DC70C6262C6701DE00D88A3B /* SideMenuRowView.swift */,
-				DC70C6282C6702B600D88A3B /* SideMenuOptionModel.swift */,
 				DCF4DA3E2C67B1AB00220E2F /* DraggableCardView.swift */,
 				DCF4DA402C67B1D100220E2F /* FlashcardDecksView.swift */,
 				DCF4DA422C67B1F600220E2F /* FlashcardListView.swift */,
@@ -231,6 +277,7 @@
 			files = (
 				DCCAFA1D2C69B15400160A7F /* PlaybackButton.swift in Sources */,
 				DC70C6232C66F8B100D88A3B /* SideMenuView.swift in Sources */,
+				DC060FBB2C6A627700FA8F6F /* SideMenuSectionsView.swift in Sources */,
 				DCF4DA452C67B20B00220E2F /* FlashcardView.swift in Sources */,
 				DC70C6252C66F9A200D88A3B /* SideMenuHeaderView.swift in Sources */,
 				DCF4DA4B2C67B4C900220E2F /* PhrasesListView.swift in Sources */,
@@ -238,9 +285,10 @@
 				DCF4DA3D2C67B13900220E2F /* FlashcardViewModel.swift in Sources */,
 				DCF4DA3F2C67B1AB00220E2F /* DraggableCardView.swift in Sources */,
 				DCF4DA372C67B09000220E2F /* DeckType.swift in Sources */,
-				DC70C6292C6702B600D88A3B /* SideMenuOptionModel.swift in Sources */,
+				DC70C6292C6702B600D88A3B /* SideMenuOptionsModel.swift in Sources */,
 				DCF4DA432C67B1F600220E2F /* FlashcardListView.swift in Sources */,
 				DC70C6272C6701DE00D88A3B /* SideMenuRowView.swift in Sources */,
+				DC060FB92C6A61B100FA8F6F /* SideMenuSections.swift in Sources */,
 				DC70C6172C66F55F00D88A3B /* ContentView.swift in Sources */,
 				DCF4DA392C67B0A900220E2F /* SpeechSynthesizerManager.swift in Sources */,
 				DC70C6152C66F55F00D88A3B /* DentalSpeakApp.swift in Sources */,
