@@ -19,7 +19,6 @@
 		DCF4DA352C67B07A00220E2F /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA342C67B07A00220E2F /* Flashcard.swift */; };
 		DCF4DA372C67B09000220E2F /* DeckType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA362C67B09000220E2F /* DeckType.swift */; };
 		DCF4DA392C67B0A900220E2F /* SpeechSynthesizerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA382C67B0A900220E2F /* SpeechSynthesizerManager.swift */; };
-		DCF4DA3B2C67B0ED00220E2F /* PlaybackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA3A2C67B0ED00220E2F /* PlaybackButton.swift */; };
 		DCF4DA3D2C67B13900220E2F /* FlashcardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA3C2C67B13900220E2F /* FlashcardViewModel.swift */; };
 		DCF4DA3F2C67B1AB00220E2F /* DraggableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA3E2C67B1AB00220E2F /* DraggableCardView.swift */; };
 		DCF4DA412C67B1D100220E2F /* FlashcardDecksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA402C67B1D100220E2F /* FlashcardDecksView.swift */; };
@@ -44,7 +43,6 @@
 		DCF4DA342C67B07A00220E2F /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
 		DCF4DA362C67B09000220E2F /* DeckType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckType.swift; sourceTree = "<group>"; };
 		DCF4DA382C67B0A900220E2F /* SpeechSynthesizerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizerManager.swift; sourceTree = "<group>"; };
-		DCF4DA3A2C67B0ED00220E2F /* PlaybackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackButton.swift; sourceTree = "<group>"; };
 		DCF4DA3C2C67B13900220E2F /* FlashcardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewModel.swift; sourceTree = "<group>"; };
 		DCF4DA3E2C67B1AB00220E2F /* DraggableCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableCardView.swift; sourceTree = "<group>"; };
 		DCF4DA402C67B1D100220E2F /* FlashcardDecksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardDecksView.swift; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 		DCF4DA2E2C67AEA800220E2F /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				DCF4DA3A2C67B0ED00220E2F /* PlaybackButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -235,7 +232,6 @@
 				DCF4DA4B2C67B4C900220E2F /* PhrasesListView.swift in Sources */,
 				DCF4DA472C67B22300220E2F /* ListItemView.swift in Sources */,
 				DCF4DA3D2C67B13900220E2F /* FlashcardViewModel.swift in Sources */,
-				DCF4DA3B2C67B0ED00220E2F /* PlaybackButton.swift in Sources */,
 				DCF4DA3F2C67B1AB00220E2F /* DraggableCardView.swift in Sources */,
 				DCF4DA372C67B09000220E2F /* DeckType.swift in Sources */,
 				DC70C6292C6702B600D88A3B /* SideMenuOptionModel.swift in Sources */,
