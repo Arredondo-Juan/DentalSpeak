@@ -14,17 +14,18 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                VStack {
+                // The selected menu option's view
+                if let selectedOption = selectedMenuOption {
+                    navigationDestination(for: selectedOption)
+                        .transition(.slide)
+                } else {
                     TermsListView()
+                        .transition(.slide)
                 }
                 
                 SideMenuView(isShowing: $showMenu, selectedOption: $selectedMenuOption)
             }
-            .navigationDestination(for: SideMenuOptionsModel.self, destination: { option in
-                navigationDestination(for: option)
-            })
-            .onAppear { showMenu = false }
-            .navigationTitle("Home")
+            .navigationTitle(selectedMenuOption == nil ? "Terms" : title(for: selectedMenuOption!))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(showMenu ? .hidden : .visible, for: .navigationBar)
             .toolbar {
@@ -33,23 +34,37 @@ struct ContentView: View {
                         showMenu.toggle()
                     } label: {
                         Image(systemName: "line.3.horizontal")
-                            .foregroundStyle(.primary)
+                            .foregroundStyle(.black)
                     }
                 }
+            }
+            .onChange(of: selectedMenuOption) {
+                showMenu = false
             }
         }
     }
 }
 
 private extension ContentView {
-    func navigationDestination(for option: SideMenuOptionsModel) -> AnyView {
+    func navigationDestination(for option: SideMenuOptionsModel) -> some View {
         switch option {
         case .terms:
-            AnyView(TermsListView())
+            return AnyView(TermsListView())
         case .phrases:
-            AnyView(PhrasesListView())
+            return AnyView(PhrasesListView())
         case .flashcards:
-            AnyView(FlashcardDecksView())
+            return AnyView(FlashcardDecksView())
+        }
+    }
+    
+    func title(for option: SideMenuOptionsModel) -> String {
+        switch option {
+        case .terms:
+            return "Terms"
+        case .phrases:
+            return "Phrases"
+        case .flashcards:
+            return "Flashcards"
         }
     }
 }
