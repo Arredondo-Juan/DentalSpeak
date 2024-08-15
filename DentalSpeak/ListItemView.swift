@@ -15,20 +15,21 @@ struct ListItemView: View {
     
     var body: some View {
         HStack {
-            VStack (alignment: .center) {
-                Button (action: {
+            VStack(alignment: .center) {
+                Button(action: {
                     onSpeakerTap()
                 }) {
                     Text(term)
                         .font(.system(size: 26, weight: .bold))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
-                        .padding(.bottom, 2)
-                    Text(definition)
-                        .font(.system(size: 16, weight: .bold))
-                        .foregroundColor(.gray)
-                        .multilineTextAlignment(.center)
+                        .padding(.bottom, 1)
                 }
+                Text(definition)
+                    .font(.system(size: 16, weight: .bold))
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.center)
+                    .padding(.top, 0)
             }
         }
         .padding()

@@ -13,28 +13,38 @@ struct FlashcardListView: View {
     @State private var flashcards: [Flashcard] = []
     
     var body: some View {
-        VStack {
-            if flashcards.isEmpty {
-                Text("No cards available")
-                    .foregroundColor(.gray)
-                    .padding()
-            } else {
-                ZStack {
-                    ForEach(Array(flashcards.enumerated()), id: \.element.id) { index, flashcard in
-                        DraggableCardView(flashcards: $flashcards, flashcard: flashcard)
+        ZStack {
+            LinearGradient(colors: [Color(.blue), Color(.white)],
+                           startPoint: .topLeading,
+                           endPoint: .bottomTrailing)
+            .ignoresSafeArea()
+            
+            VStack {
+                if flashcards.isEmpty {
+                    Text("No cards available")
+                        .foregroundColor(.gray)
+                        .padding()
+                } else {
+                    ZStack {
+                        ForEach(Array(flashcards.enumerated()), id: \.element.id) { index, flashcard in
+                            DraggableCardView(flashcards: $flashcards, flashcard: flashcard)
+                        }
                     }
+                    .padding()
+                    
+                    Text("Cards left: \(flashcards.count)")
+                        .font(.headline)
+                        .padding(.top)
                 }
-                .padding()
-                
-                Text("Cards left: \(flashcards.count)")
-                    .font(.headline)
-                    .padding(.top)
             }
+            .onAppear {
+                loadFlashcards()
+            }
+            .navigationTitle(deckType.rawValue)
+            
         }
-        .onAppear {
-            loadFlashcards()
-        }
-        .navigationTitle(deckType.rawValue)
+        
+        
     }
     
     private func loadFlashcards() {

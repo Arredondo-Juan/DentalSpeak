@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                // The selected menu option's view
+                
                 if let selectedOption = selectedMenuOption {
                     navigationDestination(for: selectedOption)
                         .transition(.slide)

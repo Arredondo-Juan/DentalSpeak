@@ -10,29 +10,40 @@ import SwiftUI
 struct PhrasesListView: View {
     @EnvironmentObject var viewModel: FlashcardViewModel
     @State private var searchText = ""
-
-
+    
     var filteredPhrases: [Flashcard] {
         viewModel.phrasesDeck
             .filter { $0.term.localizedCaseInsensitiveContains(searchText) || searchText.isEmpty }
             .sorted { $0.term.localizedCompare($1.term) == .orderedAscending }
     }
-
+    
     var body: some View {
         NavigationView {
-            List {
-                Section(header: Text("Tap to hear translation")) {
-                    ForEach(filteredPhrases) { flashcard in
-                        ListItemView(term: flashcard.term, definition: flashcard.definition) {
-                            viewModel.speak(flashcard.definition)
+            ZStack {
+                LinearGradient(colors: [Color(.blue), Color(.white)],
+                               startPoint: .topLeading,
+                               endPoint: .bottomTrailing)
+                .ignoresSafeArea()
+                
+                VStack {
+                    // Custom Search Bar
+                    SearchBar(text: $searchText)
+                        .padding(.horizontal)
+                        .padding(.bottom, 5)
+                    
+                    ScrollView {
+                        LazyVStack (spacing: 10) {
+                            ForEach(filteredPhrases) { flashcard in
+                                ListItemView(term: flashcard.term, definition: flashcard.definition) {
+                                    viewModel.speak(flashcard.definition)
+                                }
+                                .listRowSeparator(.hidden)
+                            }
                         }
-                        .listRowSeparator(.hidden)
                     }
                 }
             }
-//            .navigationTitle("Phrases")
-            .searchable(text: $searchText)
-            .listStyle(PlainListStyle())
+            .navigationBarHidden(true)
         }
     }
 }
