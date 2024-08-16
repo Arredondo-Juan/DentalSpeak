@@ -25,7 +25,7 @@ enum SideMenuSections: Int, CaseIterable {
         case .main:
             return [.terms, .phrases, .flashcards]
         case .other:
-            return []
+            return [.feedback]
         }
     }
 }
