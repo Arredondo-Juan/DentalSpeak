@@ -21,25 +21,27 @@ struct DraggableCardView: View {
                 Text(flashcard.term)
                     .font(.title)
                     .fontWeight(.bold)
-                    .multilineTextAlignment(.center) // Center the text
+                    .foregroundStyle(Color.mainText)
+                    .multilineTextAlignment(.center)
                     .padding()
                     .frame(width: 300, height: 180)
                     .background(RoundedRectangle(cornerRadius: 15)
-                        .fill(Color.white)
+                        .fill(Color.menuSelection)
                         .shadow(radius: 5, y: 5))
             } else {
                 VStack {
                     Text(flashcard.definition)
                         .font(.title)
                         .fontWeight(.semibold)
-                        .multilineTextAlignment(.center) // Center the text
+                        .foregroundStyle(Color.mainText)
+                        .multilineTextAlignment(.center)
                         .padding()
                     PlaybackButton(text: flashcard.definition)
                         .padding(.top, 10)
                 }
                 .frame(width: 300, height: 180)
                 .background(RoundedRectangle(cornerRadius: 15)
-                    .fill(Color.white)
+                    .fill(Color.menuSelection)
                     .shadow(radius: 5, y: 5))
             }
         }

@@ -16,25 +16,27 @@ struct ListItemView: View {
     var body: some View {
         HStack {
             VStack(alignment: .center) {
+                
+                Text(term)
+                    .font(.system(size: 26, weight: .bold))
+                    .foregroundColor(.mainText)
+                    .multilineTextAlignment(.center)
+                    .padding(.bottom, 1)
+                
                 Button(action: {
                     onSpeakerTap()
                 }) {
-                    Text(term)
-                        .font(.system(size: 26, weight: .bold))
-                        .foregroundColor(.white)
+                    Text(definition)
+                        .font(.system(size: 16, weight: .bold))
+                        .foregroundColor(.subText)
                         .multilineTextAlignment(.center)
-                        .padding(.bottom, 1)
+                        .padding(.top, 0)
                 }
-                Text(definition)
-                    .font(.system(size: 16, weight: .bold))
-                    .foregroundColor(.gray)
-                    .multilineTextAlignment(.center)
-                    .padding(.top, 0)
             }
         }
         .padding()
         .frame(maxWidth: .infinity, minHeight: 80, alignment: .center)
-        .background(Color(red: 32/255, green: 36/255, blue: 38/255))
+        .background(Color.menuSelection)
         .modifier(CardModifier())
     }
 }
@@ -43,6 +45,7 @@ struct CardModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .cornerRadius(20)
+            .shadow(radius: 1, y: 1)
             .padding(.horizontal)
     }
 }

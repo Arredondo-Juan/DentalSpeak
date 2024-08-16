@@ -23,12 +23,11 @@ struct FlashcardDecksView: View {
                         }
                         .font(.largeTitle)
                         .fontWeight(.bold)
-                        .foregroundStyle(Color.white)
+                        .foregroundStyle(Color.mainText)
                         .frame(width: 300, height: 180)
                         .background(RoundedRectangle(cornerRadius: 15)
-                            .fill(Color.blue)
-                            .shadow(radius: 5, y: 5)
-                            .opacity(0.6))
+                            .fill(Color.menuSelection)
+                            .shadow(radius: 5, y: 5))
                     }
                 }
 //                .navigationTitle("Flashcards")
