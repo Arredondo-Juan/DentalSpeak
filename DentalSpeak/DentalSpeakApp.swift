@@ -15,6 +15,7 @@ struct DentalSpeakApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(flashcardViewModel)
+                .preferredColorScheme(.light)
         }
     }
 }
