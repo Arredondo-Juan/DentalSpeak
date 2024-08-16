@@ -25,7 +25,7 @@ struct DraggableCardView: View {
                     .padding()
                     .frame(width: 300, height: 180)
                     .background(RoundedRectangle(cornerRadius: 15)
-                        .fill(Color.menuSelection)
+                        .fill(Color.lightBlue)
                         .shadow(radius: 5, y: 5))
             } else {
                 VStack {
@@ -40,7 +40,7 @@ struct DraggableCardView: View {
                 }
                 .frame(width: 300, height: 180)
                 .background(RoundedRectangle(cornerRadius: 15)
-                    .fill(Color.menuSelection)
+                    .fill(Color.lightBlue)
                     .shadow(radius: 5, y: 5))
             }
         }

@@ -20,7 +20,7 @@ struct PhrasesListView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                LinearGradient(colors: [Color(.blue), Color(.white)],
+                LinearGradient(colors: [Color(.menuSelection), Color(.white)],
                                startPoint: .topLeading,
                                endPoint: .bottomTrailing)
                 .ignoresSafeArea()

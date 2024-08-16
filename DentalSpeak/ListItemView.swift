@@ -36,7 +36,7 @@ struct ListItemView: View {
         }
         .padding()
         .frame(maxWidth: .infinity, minHeight: 80, alignment: .center)
-        .background(Color.menuSelection)
+        .background(Color.lightBlue)
         .modifier(CardModifier())
     }
 }

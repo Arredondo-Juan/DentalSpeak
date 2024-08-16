@@ -35,7 +35,9 @@ struct SideMenuView: View {
                     }
                     .padding()
                     .frame(width: 270, alignment: .leading)
-                    .background(.menuBackground)
+                    .background(LinearGradient(colors: [Color(.lightBlue), Color(.white)],
+                                               startPoint: .topLeading,
+                                               endPoint: .bottomTrailing))
                     
                     Spacer()
                 }

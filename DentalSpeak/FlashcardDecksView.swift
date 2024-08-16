@@ -11,7 +11,7 @@ struct FlashcardDecksView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                LinearGradient(colors: [Color(.blue), Color(.white)],
+                LinearGradient(colors: [Color(.menuSelection), Color(.white)],
                                startPoint: .topLeading,
                                endPoint: .bottomTrailing)
                 .ignoresSafeArea()
@@ -26,7 +26,7 @@ struct FlashcardDecksView: View {
                         .foregroundStyle(Color.mainText)
                         .frame(width: 300, height: 180)
                         .background(RoundedRectangle(cornerRadius: 15)
-                            .fill(Color.menuSelection)
+                            .fill(Color.lightBlue)
                             .shadow(radius: 5, y: 5))
                     }
                 }
