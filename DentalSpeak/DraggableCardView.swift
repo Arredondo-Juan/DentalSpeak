@@ -12,8 +12,7 @@ struct DraggableCardView: View {
     @Binding var flashcards: [Flashcard]
     var flashcard: Flashcard
     @State private var offset: CGSize = .zero
-    @State private var showingDeleteConfirmation = false
-    @State private var showingTerm = true // Tracks which side is visible
+    @State private var showingTerm = true
 
     var body: some View {
         VStack {
@@ -56,10 +55,10 @@ struct DraggableCardView: View {
                     if abs(self.offset.width) > 100 {
                         withAnimation(.easeInOut) {
                             if self.offset.width > 0 {
-                                // Swipe right - dismiss
+                                // Swipe right - dismiss the card
                                 self.flashcards.removeAll { $0.id == self.flashcard.id }
                             } else {
-                                // Swipe left - save card
+                                // Swipe left - save the card
                                 viewModel.saveFlashcard(self.flashcard)
                                 self.flashcards.removeAll { $0.id == self.flashcard.id }
                             }
@@ -76,23 +75,6 @@ struct DraggableCardView: View {
             withAnimation {
                 showingTerm.toggle()
             }
-        }
-        .contextMenu {
-            Button(action: {
-                showingDeleteConfirmation = true
-            }) {
-                Label("Delete", systemImage: "trash")
-            }
-        }
-        .alert(isPresented: $showingDeleteConfirmation) {
-            Alert(
-                title: Text("Delete Card"),
-                message: Text("Are you sure you want to delete this flashcard?"),
-                primaryButton: .destructive(Text("Delete")) {
-                    self.flashcards.removeAll { $0.id == self.flashcard.id }
-                },
-                secondaryButton: .cancel()
-            )
         }
     }
 }

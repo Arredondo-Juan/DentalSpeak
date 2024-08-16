@@ -36,6 +36,6 @@ class FlashcardViewModel: ObservableObject {
     }
     
     func speak(_ text: String) {
-            SpeechSynthesizerManager.shared.speak(text)
-        }
+        SpeechSynthesizerManager.shared.speak(text)
     }
+}

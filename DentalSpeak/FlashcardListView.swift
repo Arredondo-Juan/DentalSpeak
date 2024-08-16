@@ -11,6 +11,7 @@ struct FlashcardListView: View {
     @EnvironmentObject var viewModel: FlashcardViewModel
     var deckType: DeckType
     @State private var flashcards: [Flashcard] = []
+    @State private var currentIndex = 0
     
     var body: some View {
         ZStack {
@@ -25,26 +26,29 @@ struct FlashcardListView: View {
                         .foregroundColor(.gray)
                         .padding()
                 } else {
-                    ZStack {
-                        ForEach(Array(flashcards.enumerated()), id: \.element.id) { index, flashcard in
-                            DraggableCardView(flashcards: $flashcards, flashcard: flashcard)
-                        }
+                    if currentIndex < flashcards.count {
+                        DraggableCardView(flashcards: $flashcards, flashcard: flashcards[currentIndex])
+                            .onDisappear {
+                                currentIndex += 1
+                            }
+                        
+                        // Display number of cards left
+                        Text("Cards left: \(flashcards.count - currentIndex)")
+                            .font(.headline)
+                            .padding(.top)
+                    } else {
+                        Text("You've gone through all the cards!")
+                            .font(.headline)
+                            .padding()
                     }
-                    .padding()
-                    
-                    Text("Cards left: \(flashcards.count)")
-                        .font(.headline)
-                        .padding(.top)
                 }
             }
             .onAppear {
                 loadFlashcards()
+                flashcards.shuffle() // Randomize flashcards
             }
             .navigationTitle(deckType.rawValue)
-            
         }
-        
-        
     }
     
     private func loadFlashcards() {
@@ -58,6 +62,7 @@ struct FlashcardListView: View {
         }
     }
 }
+
 
 #Preview {
     FlashcardListView(deckType: .terms)
