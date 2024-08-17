@@ -84,8 +84,8 @@
 		DC060FB42C6A60D000FA8F6F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DC70C6282C6702B600D88A3B /* SideMenuOptionsModel.swift */,
 				DC060FB82C6A61B100FA8F6F /* SideMenuSections.swift */,
+				DC70C6282C6702B600D88A3B /* SideMenuOptionsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
