@@ -14,9 +14,9 @@ struct FeedbackFormView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(colors: [Color(.menuSelection), Color(.white)],
-                           startPoint: .topLeading,
-                           endPoint: .bottomTrailing)
+            LinearGradient(colors: [Color(.lightGreen), Color(.darkGreen)],
+                           startPoint: .top,
+                           endPoint: .bottom)
             .ignoresSafeArea()
             
             VStack {
