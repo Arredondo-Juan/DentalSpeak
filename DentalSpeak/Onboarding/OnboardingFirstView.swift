@@ -11,9 +11,9 @@ struct OnboardingFirstView: View {
     var body: some View {
         ZStack {
             
-            LinearGradient(colors: [Color(.lightGreen), Color(.darkGreen)],
-                           startPoint: .top,
-                           endPoint: .bottom)
+            LinearGradient(colors: [Color(.lightBlue), Color(.mediumBlue)],
+                           startPoint: .topLeading,
+                           endPoint: .bottomTrailing)
             .ignoresSafeArea()
             
             VStack (spacing: 10) {
