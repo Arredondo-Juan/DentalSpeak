@@ -20,7 +20,7 @@ struct TermsListView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                LinearGradient(colors: [Color(.lightGreen), Color(.darkGreen)],
+                LinearGradient(colors: [Color(.lightBlue), Color(.mediumBlue)],
                                startPoint: .top,
                                endPoint: .bottom)
                 .ignoresSafeArea()
@@ -57,7 +57,8 @@ struct SearchBar: View {
                 .padding(7)
                 .padding(.horizontal, 25)
                 .background(Color.white.opacity(0.2))
-                .cornerRadius(8)
+                .cornerRadius(30)
+                .shadow(radius: 1, y:1)
                 .foregroundColor(.black)
                 .overlay(
                     HStack {
