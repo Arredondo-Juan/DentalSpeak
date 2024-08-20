@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		DC060FB92C6A61B100FA8F6F /* SideMenuSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC060FB82C6A61B100FA8F6F /* SideMenuSections.swift */; };
 		DC060FBB2C6A627700FA8F6F /* SideMenuSectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC060FBA2C6A627700FA8F6F /* SideMenuSectionsView.swift */; };
-		DC1E046C2C710B15003AFD46 /* OnboardingFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1E046B2C710B15003AFD46 /* OnboardingFirstView.swift */; };
-		DC1E046F2C710B6D003AFD46 /* OnboardingSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1E046E2C710B6D003AFD46 /* OnboardingSecondView.swift */; };
-		DC1E04712C710B85003AFD46 /* OnboardingThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1E04702C710B85003AFD46 /* OnboardingThirdView.swift */; };
 		DC70C6152C66F55F00D88A3B /* DentalSpeakApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70C6142C66F55F00D88A3B /* DentalSpeakApp.swift */; };
 		DC70C6172C66F55F00D88A3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70C6162C66F55F00D88A3B /* ContentView.swift */; };
 		DC70C6192C66F56100D88A3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC70C6182C66F56100D88A3B /* Assets.xcassets */; };
@@ -21,6 +18,8 @@
 		DC70C6272C6701DE00D88A3B /* SideMenuRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70C6262C6701DE00D88A3B /* SideMenuRowView.swift */; };
 		DC70C6292C6702B600D88A3B /* SideMenuOptionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70C6282C6702B600D88A3B /* SideMenuOptionsModel.swift */; };
 		DCCAFA1D2C69B15400160A7F /* PlaybackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCAFA1C2C69B15300160A7F /* PlaybackButton.swift */; };
+		DCD304682C7426DA004F52B5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD304672C7426DA004F52B5 /* OnboardingView.swift */; };
+		DCD3046A2C7426ED004F52B5 /* OnboardingViewDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD304692C7426ED004F52B5 /* OnboardingViewDetails.swift */; };
 		DCEE00B62C6F107200E9C316 /* FeedbackFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEE00B52C6F107200E9C316 /* FeedbackFormView.swift */; };
 		DCF4DA332C67AF7500220E2F /* dentalspanishdata.json in Resources */ = {isa = PBXBuildFile; fileRef = DCF4DA322C67AF7500220E2F /* dentalspanishdata.json */; };
 		DCF4DA352C67B07A00220E2F /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA342C67B07A00220E2F /* Flashcard.swift */; };
@@ -39,9 +38,6 @@
 /* Begin PBXFileReference section */
 		DC060FB82C6A61B100FA8F6F /* SideMenuSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SideMenuSections.swift; path = DentalSpeak/SideMenuSections.swift; sourceTree = SOURCE_ROOT; };
 		DC060FBA2C6A627700FA8F6F /* SideMenuSectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuSectionsView.swift; sourceTree = "<group>"; };
-		DC1E046B2C710B15003AFD46 /* OnboardingFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFirstView.swift; sourceTree = "<group>"; };
-		DC1E046E2C710B6D003AFD46 /* OnboardingSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSecondView.swift; sourceTree = "<group>"; };
-		DC1E04702C710B85003AFD46 /* OnboardingThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingThirdView.swift; sourceTree = "<group>"; };
 		DC70C6112C66F55F00D88A3B /* DentalSpeak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DentalSpeak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC70C6142C66F55F00D88A3B /* DentalSpeakApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentalSpeakApp.swift; sourceTree = "<group>"; };
 		DC70C6162C66F55F00D88A3B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +48,8 @@
 		DC70C6262C6701DE00D88A3B /* SideMenuRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuRowView.swift; sourceTree = "<group>"; };
 		DC70C6282C6702B600D88A3B /* SideMenuOptionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionsModel.swift; sourceTree = "<group>"; };
 		DCCAFA1C2C69B15300160A7F /* PlaybackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackButton.swift; sourceTree = "<group>"; };
+		DCD304672C7426DA004F52B5 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		DCD304692C7426ED004F52B5 /* OnboardingViewDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewDetails.swift; sourceTree = "<group>"; };
 		DCEE00B52C6F107200E9C316 /* FeedbackFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackFormView.swift; sourceTree = "<group>"; };
 		DCF4DA322C67AF7500220E2F /* dentalspanishdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dentalspanishdata.json; sourceTree = "<group>"; };
 		DCF4DA342C67B07A00220E2F /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
@@ -126,9 +124,8 @@
 		DC1E046D2C710B19003AFD46 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				DC1E046B2C710B15003AFD46 /* OnboardingFirstView.swift */,
-				DC1E046E2C710B6D003AFD46 /* OnboardingSecondView.swift */,
-				DC1E04702C710B85003AFD46 /* OnboardingThirdView.swift */,
+				DCD304672C7426DA004F52B5 /* OnboardingView.swift */,
+				DCD304692C7426ED004F52B5 /* OnboardingViewDetails.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -315,8 +312,7 @@
 				DC70C6232C66F8B100D88A3B /* SideMenuView.swift in Sources */,
 				DC060FBB2C6A627700FA8F6F /* SideMenuSectionsView.swift in Sources */,
 				DCF4DA452C67B20B00220E2F /* FlashcardView.swift in Sources */,
-				DC1E046F2C710B6D003AFD46 /* OnboardingSecondView.swift in Sources */,
-				DC1E04712C710B85003AFD46 /* OnboardingThirdView.swift in Sources */,
+				DCD3046A2C7426ED004F52B5 /* OnboardingViewDetails.swift in Sources */,
 				DC70C6252C66F9A200D88A3B /* SideMenuHeaderView.swift in Sources */,
 				DCF4DA4B2C67B4C900220E2F /* PhrasesListView.swift in Sources */,
 				DCF4DA472C67B22300220E2F /* ListItemView.swift in Sources */,
@@ -325,10 +321,10 @@
 				DCF4DA372C67B09000220E2F /* DeckType.swift in Sources */,
 				DC70C6292C6702B600D88A3B /* SideMenuOptionsModel.swift in Sources */,
 				DCF4DA432C67B1F600220E2F /* FlashcardListView.swift in Sources */,
-				DC1E046C2C710B15003AFD46 /* OnboardingFirstView.swift in Sources */,
 				DC70C6272C6701DE00D88A3B /* SideMenuRowView.swift in Sources */,
 				DC060FB92C6A61B100FA8F6F /* SideMenuSections.swift in Sources */,
 				DC70C6172C66F55F00D88A3B /* ContentView.swift in Sources */,
+				DCD304682C7426DA004F52B5 /* OnboardingView.swift in Sources */,
 				DCF4DA392C67B0A900220E2F /* SpeechSynthesizerManager.swift in Sources */,
 				DC70C6152C66F55F00D88A3B /* DentalSpeakApp.swift in Sources */,
 				DCF4DA352C67B07A00220E2F /* Flashcard.swift in Sources */,
