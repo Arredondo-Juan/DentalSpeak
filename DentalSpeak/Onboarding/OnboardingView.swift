@@ -11,6 +11,7 @@ struct OnboardingView: View {
     
     @Environment(\.dismiss) var dismiss
     @State var selectedViewIndex = 0
+    @AppStorage("onboarding") var needsOnboarding = true
     
     var body: some View {
         
@@ -18,7 +19,7 @@ struct OnboardingView: View {
             
             TabView (selection: $selectedViewIndex) {
                 
-                OnboardingViewDetails(gradientColorOne: Color.lightBlue, gradientColorTwo: Color.mediumBlue, imageName: "tooth-shine", headline: "Welcome to DentalSpeak!", subheadline: "Test Subheadline", buttonColor: Color.lightBlue) {
+                OnboardingViewDetails(gradientColorOne: Color.lightBlue, gradientColorTwo: Color.mediumBlue, imageName: "tooth-sparkle", headline: "Welcome to DentalSpeak!", subheadline: "Test Subheadline", buttonColor: Color.lightBlue) {
                     withAnimation {
                         selectedViewIndex = 1
                     }
@@ -35,6 +36,7 @@ struct OnboardingView: View {
                 OnboardingViewDetails(gradientColorOne: Color.lightBlue, gradientColorTwo: Color.mediumBlue, imageName: "dentist-study", headline: "Test Headline 3", subheadline: "Test subheadline 3", buttonColor: Color.lightBlue) {
                     withAnimation {
                         dismiss()
+                        needsOnboarding = false
                     }
                 }
                 .tag(2)

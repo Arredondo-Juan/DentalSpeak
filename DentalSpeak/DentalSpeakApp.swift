@@ -15,14 +15,16 @@ struct DentalSpeakApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(flashcardViewModel)
-                .fullScreenCover(isPresented: $needsOnboarding) {
-                    //on dismiss
-                    needsOnboarding = false
-                } content: {
-                    OnboardingView()
-                }
+            
+            if needsOnboarding == true {
+                OnboardingView()
+                    .preferredColorScheme(.light)
+            } else {
+                ContentView()
+                    .environmentObject(flashcardViewModel)
+                    .preferredColorScheme(.light)
+            }
+            
         }
     }
 }
