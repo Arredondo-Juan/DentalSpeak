@@ -11,17 +11,18 @@ struct OnboardingThirdView: View {
     var body: some View {
         ZStack {
             
-            LinearGradient(colors: [Color(.lightGreen), Color(.darkGreen)],
+            LinearGradient(colors: [Color(.lightBlue), Color(.mediumBlue)],
                            startPoint: .top,
                            endPoint: .bottom)
             .ignoresSafeArea()
             
             VStack (spacing: 10) {
-                Image(systemName: "person.fill.questionmark")
+                Image("dentist-study")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 100, height: 100)
+                    .frame(width: 300, height: 300)
                     .padding(.bottom, 10)
+                    .shadow(radius: 5, y:5)
                 Text("Quiz yourself!")
                     .font(.title)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -30,8 +31,21 @@ struct OnboardingThirdView: View {
                     .font(.headline)
                     .foregroundStyle(Color.mainText)
                     .multilineTextAlignment(.center)
+                    .padding(.bottom, 25)
+                
+                NavigationLink(destination: ContentView()) {
+                    Text("Got it!")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .clipShape(Capsule())
+                    
+                }
+                .navigationBarTitle("")
+                                .navigationBarHidden(true)
             }
-            
         }
     }
 }
