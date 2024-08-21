@@ -10,7 +10,7 @@ import SwiftUI
 struct SideMenuHeaderView: View {
     var body: some View {
         HStack {
-            Image("dentalspeaklogo")
+            Image("tooth-sparkle")
                 .resizable()
                 .imageScale(.large)
                 .frame(width: 48, height: 48)

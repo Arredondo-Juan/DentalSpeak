@@ -18,10 +18,11 @@ struct ListItemView: View {
             VStack(alignment: .center) {
                 
                 Text(term)
-                    .font(.system(size: 26, weight: .bold))
+                    .font(.system(size: 20, weight: .bold))
                     .foregroundColor(.mainText)
                     .multilineTextAlignment(.center)
-                    .padding(.bottom, 1)
+                    .padding(.bottom, 0)
+                    .padding(.horizontal)
                 
                 Button(action: {
                     onSpeakerTap()
@@ -31,12 +32,14 @@ struct ListItemView: View {
                         .foregroundColor(.subText)
                         .multilineTextAlignment(.center)
                         .padding(.top, 0)
+                        .padding(.horizontal)
                 }
             }
         }
-        .padding()
-        .frame(maxWidth: .infinity, minHeight: 80, alignment: .center)
-        .background(Color.lightBlueee)
+        .padding(.top, 3)
+        .padding(.bottom, 3)
+        .frame(maxWidth: .infinity, minHeight: 40, alignment: .center)
+        .background(Color.lightBlue)
         .modifier(CardModifier())
     }
 }
