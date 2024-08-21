@@ -20,7 +20,6 @@
 		DCCAFA1D2C69B15400160A7F /* PlaybackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCAFA1C2C69B15300160A7F /* PlaybackButton.swift */; };
 		DCD304682C7426DA004F52B5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD304672C7426DA004F52B5 /* OnboardingView.swift */; };
 		DCD3046A2C7426ED004F52B5 /* OnboardingViewDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD304692C7426ED004F52B5 /* OnboardingViewDetails.swift */; };
-		DCEE00B62C6F107200E9C316 /* FeedbackFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEE00B52C6F107200E9C316 /* FeedbackFormView.swift */; };
 		DCF4DA332C67AF7500220E2F /* dentalspanishdata.json in Resources */ = {isa = PBXBuildFile; fileRef = DCF4DA322C67AF7500220E2F /* dentalspanishdata.json */; };
 		DCF4DA352C67B07A00220E2F /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA342C67B07A00220E2F /* Flashcard.swift */; };
 		DCF4DA372C67B09000220E2F /* DeckType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4DA362C67B09000220E2F /* DeckType.swift */; };
@@ -50,7 +49,6 @@
 		DCCAFA1C2C69B15300160A7F /* PlaybackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackButton.swift; sourceTree = "<group>"; };
 		DCD304672C7426DA004F52B5 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		DCD304692C7426ED004F52B5 /* OnboardingViewDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewDetails.swift; sourceTree = "<group>"; };
-		DCEE00B52C6F107200E9C316 /* FeedbackFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackFormView.swift; sourceTree = "<group>"; };
 		DCF4DA322C67AF7500220E2F /* dentalspanishdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dentalspanishdata.json; sourceTree = "<group>"; };
 		DCF4DA342C67B07A00220E2F /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
 		DCF4DA362C67B09000220E2F /* DeckType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckType.swift; sourceTree = "<group>"; };
@@ -216,7 +214,6 @@
 				DCF4DA462C67B22300220E2F /* ListItemView.swift */,
 				DCF4DA482C67B24D00220E2F /* TermsListView.swift */,
 				DCF4DA4A2C67B4C900220E2F /* PhrasesListView.swift */,
-				DCEE00B52C6F107200E9C316 /* FeedbackFormView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,7 +325,6 @@
 				DCF4DA392C67B0A900220E2F /* SpeechSynthesizerManager.swift in Sources */,
 				DC70C6152C66F55F00D88A3B /* DentalSpeakApp.swift in Sources */,
 				DCF4DA352C67B07A00220E2F /* Flashcard.swift in Sources */,
-				DCEE00B62C6F107200E9C316 /* FeedbackFormView.swift in Sources */,
 				DCF4DA492C67B24D00220E2F /* TermsListView.swift in Sources */,
 				DCF4DA412C67B1D100220E2F /* FlashcardDecksView.swift in Sources */,
 			);

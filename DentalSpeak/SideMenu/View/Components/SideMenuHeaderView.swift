@@ -19,10 +19,10 @@ struct SideMenuHeaderView: View {
             
             VStack(alignment: .leading, spacing: 6) {
                 Text("DentalSpeak")
-                    .font(.subheadline)
+                    .font(.headline)
                 
                 Text("Dental terms in Spanish")
-                    .font(.footnote)
+                    .font(.subheadline)
                     .foregroundStyle(Color.gray)
             }
         }

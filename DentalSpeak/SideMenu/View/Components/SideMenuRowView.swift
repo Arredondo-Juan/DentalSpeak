@@ -18,10 +18,10 @@ struct SideMenuRowView: View {
     var body: some View {
         HStack {
             Image(systemName: option.systemImageName)
-                .imageScale(.small)
+                .imageScale(.medium)
             
             Text(option.title)
-                .font(.subheadline)
+                .font(.headline)
             
             Spacer()
         }

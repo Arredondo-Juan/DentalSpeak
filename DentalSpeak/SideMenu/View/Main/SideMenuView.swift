@@ -10,7 +10,7 @@ import SwiftUI
 struct SideMenuView: View {
     @Binding var isShowing: Bool
     @Binding var selectedOption: SideMenuOptionsModel?
-
+    
     var body: some View {
         ZStack {
             if isShowing {
@@ -29,16 +29,28 @@ struct SideMenuView: View {
                                                     isShowing: $isShowing,
                                                     selectedOption: $selectedOption)
                             }
+                            
+                            Spacer()
+                            
+                            VStack (alignment: .leading) {
+                                Text("Contact Us")
+                                    .textCase(.uppercase)
+                                    .font(.footnote)
+                                    .foregroundStyle(.black)
+                                    .padding(.vertical)
+                            
+                                    Text("dentalspeakapp@gmail.com")
+                                        .font(.subheadline)
+                                        .accentColor(.black)
+                            }
                         }
-                        
-                        Spacer()
                     }
                     .padding()
                     .frame(width: 270, alignment: .leading)
                     .background(LinearGradient(colors: [Color(.lightBlue), Color(.mediumBlue)],
                                                startPoint: .topLeading,
                                                endPoint: .bottomTrailing)
-                                .ignoresSafeArea())
+                        .ignoresSafeArea())
                     
                     Spacer()
                 }
