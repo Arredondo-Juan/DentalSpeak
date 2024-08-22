@@ -32,14 +32,19 @@ struct SideMenuView: View {
                             
                             Spacer()
                             
-                            VStack (alignment: .leading) {
-                                Text("Contact Us")
-                                    .textCase(.uppercase)
-                                    .font(.footnote)
-                                    .foregroundStyle(.black)
-                                    .padding(.vertical)
+                            VStack {
+//                                Text("Contact Us")
+//                                    .textCase(.uppercase)
+//                                    .font(.footnote)
+//                                    .foregroundStyle(.black)
+//                                    .padding(.vertical)
+//                                    .fontWeight(.bold)
+                                
+                                Text("Send us feedback at")
+                                    .font(.subheadline)
+                                    .frame(alignment: .center)
                             
-                                    Text("dentalspeakapp@gmail.com")
+                                Text("dentalspeakapp@gmail.com")
                                         .font(.subheadline)
                                         .accentColor(.black)
                             }
@@ -48,8 +53,8 @@ struct SideMenuView: View {
                     .padding()
                     .frame(width: 270, alignment: .leading)
                     .background(LinearGradient(colors: [Color(.lightBlue), Color(.mediumBlue)],
-                                               startPoint: .topLeading,
-                                               endPoint: .bottomTrailing)
+                                               startPoint: .topTrailing,
+                                               endPoint: .bottomLeading)
                         .ignoresSafeArea())
                     
                     Spacer()

@@ -14,8 +14,9 @@ struct SideMenuHeaderView: View {
                 .resizable()
                 .imageScale(.large)
                 .frame(width: 48, height: 48)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .padding(.vertical)
+                .shadow(radius: 1, y:1)
+//                .clipShape(RoundedRectangle(cornerRadius: 10))
+//                .padding(.vertical)
             
             VStack(alignment: .leading, spacing: 6) {
                 Text("DentalSpeak")
