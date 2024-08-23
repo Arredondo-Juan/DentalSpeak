@@ -13,6 +13,14 @@ struct FlashcardListView: View {
     @State private var flashcards: [Flashcard] = []
     @State private var currentIndex = 0
     
+    @AppStorage("hasSeenDragFeatureOverlay") private var hasSeenDragFeatureOverlay = false
+    @State private var showOverlay: Bool = false
+
+    init(deckType: DeckType) {
+        self.deckType = deckType
+        _showOverlay = State(initialValue: !hasSeenDragFeatureOverlay)
+    }
+    
     var body: some View {
         ZStack {
             LinearGradient(colors: [Color(.lightGreen), Color(.darkGreen)],
@@ -48,6 +56,34 @@ struct FlashcardListView: View {
                 flashcards.shuffle() // Randomize flashcards
             }
             .navigationTitle(deckType.rawValue)
+            
+            // Overlay View
+            if showOverlay {
+                Color.black.opacity(0.6)
+                    .ignoresSafeArea()
+                    .overlay(
+                        VStack {
+                            Text("Swipe left to save a card or move it to the back of the deck.\nSwipe right to remove the card from the deck.")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .multilineTextAlignment(.center)
+                                .padding()
+                            Button(action: {
+                                withAnimation {
+                                    showOverlay = false  // Dismiss the overlay
+                                    hasSeenDragFeatureOverlay = true  // Persist the state so it doesn’t show again
+                                }
+                            }) {
+                                Text("Got it!")
+                                    .font(.headline)
+                                    .padding()
+                                    .background(Color.white)
+                                    .cornerRadius(10)
+                            }
+                        }
+                        .padding()
+                    )
+            }
         }
     }
     
@@ -62,7 +98,6 @@ struct FlashcardListView: View {
         }
     }
 }
-
 
 #Preview {
     FlashcardListView(deckType: .terms)
