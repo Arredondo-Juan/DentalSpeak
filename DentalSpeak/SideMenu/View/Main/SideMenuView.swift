@@ -44,7 +44,7 @@ struct SideMenuView: View {
                                     .font(.subheadline)
                                     .frame(alignment: .center)
                             
-                                Text("dentalspeakapp@gmail.com")
+                                Text("dentalspeak@proton.me")
                                         .font(.subheadline)
                                         .accentColor(.black)
                             }
