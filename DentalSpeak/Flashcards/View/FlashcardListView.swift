@@ -27,7 +27,7 @@ struct FlashcardListView: View {
                         .padding()
                 } else {
                     if currentIndex < flashcards.count {
-                        DraggableCardView(flashcards: $flashcards, flashcard: flashcards[currentIndex])
+                        DraggableCardView(flashcards: $flashcards, flashcard: flashcards[currentIndex], isInSavedDeck: deckType == .saved)
                             .onDisappear {
                                 currentIndex += 1
                             }

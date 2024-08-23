@@ -13,6 +13,7 @@ struct DraggableCardView: View {
     var flashcard: Flashcard
     @State private var offset: CGSize = .zero
     @State private var showingTerm = true
+    var isInSavedDeck: Bool
 
     var body: some View {
         VStack {
@@ -55,12 +56,28 @@ struct DraggableCardView: View {
                     if abs(self.offset.width) > 100 {
                         withAnimation(.easeInOut) {
                             if self.offset.width > 0 {
-                                // Swipe right - dismiss the card
-                                self.flashcards.removeAll { $0.id == self.flashcard.id }
+                                // Swipe right
+                                if isInSavedDeck {
+                                    // Remove from saved deck
+                                    viewModel.removeFlashcard(flashcard)
+                                    flashcards.removeAll { $0.id == flashcard.id }
+                                } else {
+                                    // Dismiss the card
+                                    flashcards.removeAll { $0.id == flashcard.id }
+                                }
                             } else {
-                                // Swipe left - save the card
-                                viewModel.saveFlashcard(self.flashcard)
-                                self.flashcards.removeAll { $0.id == self.flashcard.id }
+                                // Swipe left
+                                if isInSavedDeck {
+                                    // Move to the back of the saved deck
+                                    viewModel.moveFlashcardToBack(flashcard)
+                                    // Remove and re-append to simulate moving to the back
+                                    flashcards.removeAll { $0.id == flashcard.id }
+                                    flashcards.append(flashcard)
+                                } else {
+                                    // Save the card and remove from the original deck
+                                    viewModel.saveFlashcard(flashcard)
+                                    flashcards.removeAll { $0.id == flashcard.id }
+                                }
                             }
                             self.offset = .zero
                         }
