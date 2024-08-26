@@ -20,9 +20,9 @@ struct PhrasesListView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                LinearGradient(colors: [Color(.lightGreen), Color(.darkGreen)],
-                               startPoint: .top,
-                               endPoint: .bottom)
+                LinearGradient(colors: [Color(.lightBlue), Color(.darkGreen)],
+                               startPoint: .topLeading,
+                               endPoint: .bottomTrailing)
                 .ignoresSafeArea()
                 
                 VStack {
@@ -32,7 +32,7 @@ struct PhrasesListView: View {
                         .padding(.bottom, 5)
                     
                     ScrollView {
-                        LazyVStack (spacing: 10) {
+                        LazyVStack(spacing: 10) {
                             ForEach(filteredPhrases) { flashcard in
                                 ListItemView(term: flashcard.term, definition: flashcard.definition) {
                                     viewModel.speak(flashcard.definition)
@@ -42,8 +42,15 @@ struct PhrasesListView: View {
                         }
                     }
                 }
+                .onTapGesture {
+                    hideKeyboard()
+                }
             }
             .navigationBarHidden(true)
         }
+    }
+    
+    private func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }

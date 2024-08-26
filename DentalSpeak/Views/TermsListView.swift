@@ -20,9 +20,9 @@ struct TermsListView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                LinearGradient(colors: [Color(.lightBlue), Color(.mediumBlue)],
-                               startPoint: .top,
-                               endPoint: .bottom)
+                LinearGradient(colors: [Color(.lightBlue), Color(.darkGreen)],
+                               startPoint: .topLeading,
+                               endPoint: .bottomTrailing)
                 .ignoresSafeArea()
                 
                 VStack {
@@ -42,9 +42,16 @@ struct TermsListView: View {
                         }
                     }
                 }
+                .onTapGesture {
+                    dismissKeyboard()
+                }
             }
             .navigationBarHidden(true)
         }
+    }
+    
+    private func dismissKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 
@@ -57,7 +64,7 @@ struct SearchBar: View {
                 .padding(7)
                 .padding(.horizontal, 25)
                 .background(Color.white.opacity(0.2))
-                .shadow(radius: 1, y:1)
+                .shadow(radius: 1, y: 1)
                 .cornerRadius(20)
                 .foregroundColor(.black)
                 .overlay(

@@ -13,7 +13,7 @@ class FlashcardViewModel: ObservableObject {
     @Published var savedDeck: [Flashcard] = []
     
     @AppStorage("savedFlashcardTermsString") private var savedFlashcardTermsString: String = ""
-
+    
     init() {
         loadFlashcards()
         loadSavedFlashcards()
@@ -37,7 +37,7 @@ class FlashcardViewModel: ObservableObject {
             do {
                 let savedTerms = try JSONDecoder().decode([String].self, from: data)
                 savedDeck = termsDeck.filter { savedTerms.contains($0.term) } +
-                            phrasesDeck.filter { savedTerms.contains($0.term) }
+                phrasesDeck.filter { savedTerms.contains($0.term) }
             } catch {
                 print("Error decoding saved flashcard terms: \(error)")
             }

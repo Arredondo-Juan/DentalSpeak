@@ -32,21 +32,16 @@ struct SideMenuView: View {
                             
                             Spacer()
                             
-                            VStack {
-//                                Text("Contact Us")
-//                                    .textCase(.uppercase)
-//                                    .font(.footnote)
-//                                    .foregroundStyle(.black)
-//                                    .padding(.vertical)
-//                                    .fontWeight(.bold)
-                                
-                                Text("Send us feedback at")
+                            VStack {                                
+                                Text("Send feedback to")
                                     .font(.subheadline)
+                                    .bold()
                                     .frame(alignment: .center)
-                            
+                                
                                 Text("dentalspeak@proton.me")
-                                        .font(.subheadline)
-                                        .accentColor(.black)
+                                    .font(.subheadline)
+                                    .bold()
+                                    .accentColor(.black)
                             }
                         }
                     }

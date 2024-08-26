@@ -39,11 +39,15 @@ struct OnboardingViewDetails: View {
                 Text(headline)
                     .font(.title)
                     .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
                     .foregroundStyle(Color.mainText)
+                    .padding(.horizontal)
                 
                 Text(subheadline)
                     .font(.headline)
+                    .multilineTextAlignment(.center)
                     .foregroundStyle(Color.mainText)
+                    .padding(.horizontal)
                     .padding(.top, 4)
                 
                 Spacer()

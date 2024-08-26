@@ -14,7 +14,7 @@ struct DraggableCardView: View {
     @State private var offset: CGSize = .zero
     @State private var showingTerm = true
     var isInSavedDeck: Bool
-
+    
     var body: some View {
         VStack {
             if showingTerm {
@@ -37,7 +37,6 @@ struct DraggableCardView: View {
                         .multilineTextAlignment(.center)
                         .padding()
                     PlaybackButton(text: flashcard.definition)
-                        .padding(.top, 10)
                 }
                 .frame(width: 300, height: 180)
                 .background(RoundedRectangle(cornerRadius: 15)

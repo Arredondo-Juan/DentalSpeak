@@ -15,8 +15,6 @@ struct SideMenuHeaderView: View {
                 .imageScale(.large)
                 .frame(width: 48, height: 48)
                 .shadow(radius: 1, y:1)
-//                .clipShape(RoundedRectangle(cornerRadius: 10))
-//                .padding(.vertical)
             
             VStack(alignment: .leading, spacing: 6) {
                 Text("DentalSpeak")
@@ -24,6 +22,7 @@ struct SideMenuHeaderView: View {
                 
                 Text("Dental terms in Spanish")
                     .font(.subheadline)
+                    .fontWeight(.semibold)
                     .foregroundStyle(Color.gray)
             }
         }

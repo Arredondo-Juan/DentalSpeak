@@ -11,9 +11,9 @@ struct FlashcardDecksView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                LinearGradient(colors: [Color(.lightGreen), Color(.darkGreen)],
-                               startPoint: .top,
-                               endPoint: .bottom)
+                LinearGradient(colors: [Color(.lightBlue), Color(.darkGreen)],
+                               startPoint: .topLeading,
+                               endPoint: .bottomTrailing)
                 .ignoresSafeArea()
                 
                 VStack(spacing: 25) {
@@ -30,9 +30,9 @@ struct FlashcardDecksView: View {
                             .shadow(radius: 5, y: 5))
                     }
                 }
-//                .navigationTitle("Flashcards")
-//                .navigationBarTitleDisplayMode(.large)
-//                .padding()
+                //                .navigationTitle("Flashcards")
+                //                .navigationBarTitleDisplayMode(.large)
+                //                .padding()
             }
         }
     }

@@ -13,19 +13,16 @@ struct FlashcardListView: View {
     @State private var flashcards: [Flashcard] = []
     @State private var currentIndex = 0
     
-    @AppStorage("hasSeenDragFeatureOverlay") private var hasSeenDragFeatureOverlay = false
+    @AppStorage("hasSeenDragFeatureOverlayTerms") private var hasSeenDragFeatureOverlayTerms = false
+    @AppStorage("hasSeenDragFeatureOverlayPhrases") private var hasSeenDragFeatureOverlayPhrases = false
+    @AppStorage("hasSeenDragFeatureOverlaySaved") private var hasSeenDragFeatureOverlaySaved = false
     @State private var showOverlay: Bool = false
-
-    init(deckType: DeckType) {
-        self.deckType = deckType
-        _showOverlay = State(initialValue: !hasSeenDragFeatureOverlay)
-    }
     
     var body: some View {
         ZStack {
-            LinearGradient(colors: [Color(.lightGreen), Color(.darkGreen)],
-                           startPoint: .top,
-                           endPoint: .bottom)
+            LinearGradient(colors: [Color(.lightBlue), Color(.darkGreen)],
+                           startPoint: .topLeading,
+                           endPoint: .bottomTrailing)
             .ignoresSafeArea()
             
             VStack {
@@ -35,12 +32,13 @@ struct FlashcardListView: View {
                         .padding()
                 } else {
                     if currentIndex < flashcards.count {
-                        DraggableCardView(flashcards: $flashcards, flashcard: flashcards[currentIndex], isInSavedDeck: deckType == .saved)
-                            .onDisappear {
-                                currentIndex += 1
-                            }
+                        DraggableCardView(flashcards: $flashcards,
+                                          flashcard: flashcards[currentIndex],
+                                          isInSavedDeck: deckType == .saved)
+                        .onDisappear {
+                            currentIndex += 1
+                        }
                         
-                        // Display number of cards left
                         Text("Cards left: \(flashcards.count - currentIndex)")
                             .font(.headline)
                             .padding(.top)
@@ -53,35 +51,91 @@ struct FlashcardListView: View {
             }
             .onAppear {
                 loadFlashcards()
-                flashcards.shuffle() // Randomize flashcards
+                flashcards.shuffle()
+                
+                switch deckType {
+                case .terms:
+                    showOverlay = !hasSeenDragFeatureOverlayTerms
+                case .phrases:
+                    showOverlay = !hasSeenDragFeatureOverlayPhrases
+                case .saved:
+                    showOverlay = !hasSeenDragFeatureOverlaySaved
+                }
             }
             .navigationTitle(deckType.rawValue)
             
-            // Overlay View
             if showOverlay {
-                Color.black.opacity(0.6)
+                Color.black.opacity(0.8)
                     .ignoresSafeArea()
                     .overlay(
-                        VStack {
-                            Text("Swipe left to save a card or move it to the back of the deck.\nSwipe right to remove the card from the deck.")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .multilineTextAlignment(.center)
-                                .padding()
+                        VStack (spacing: 20) {
+                            if deckType == .saved {
+                                // Saved Deck Overlay Content 
+                                Text("Swipe left to move the card to the back of the deck and come back to it later.")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .multilineTextAlignment(.center)
+                                    .padding(.bottom, 40)
+                                
+                                Text("Swipe right to remove the card from your Saved Deck.")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .multilineTextAlignment(.center)
+                                    .padding()
+                            } else {
+                                // Terms/Phrases Deck Overlay Content
+                                HStack {
+                                    Image("swipeleft")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 140, height: 140)
+                                    Spacer()
+                                }
+                                Text("Swipe left on a flashcard to add it to your Saved Deck.")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .multilineTextAlignment(.center)
+                                    .padding(.bottom, 40)
+                                
+                                HStack {
+                                    Spacer()
+                                    Image("swiperight")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 140, height: 140)
+                                }
+                                Text("Swipe right on a flashcard to go to the next card.")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .multilineTextAlignment(.center)
+                                    .padding()
+                            }
+                            
                             Button(action: {
                                 withAnimation {
-                                    showOverlay = false  // Dismiss the overlay
-                                    hasSeenDragFeatureOverlay = true  // Persist the state so it doesn’t show again
+                                    showOverlay = false
+                                    
+                                    switch deckType {
+                                    case .terms:
+                                        hasSeenDragFeatureOverlayTerms = true
+                                    case .phrases:
+                                        hasSeenDragFeatureOverlayPhrases = true
+                                    case .saved:
+                                        hasSeenDragFeatureOverlaySaved = true
+                                    }
                                 }
                             }) {
-                                Text("Got it!")
-                                    .font(.headline)
-                                    .padding()
-                                    .background(Color.white)
-                                    .cornerRadius(10)
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 14)
+                                        .foregroundColor(.lightBlue)
+                                        .frame(height: 50)
+                                    Text("Got it!")
+                                        .bold()
+                                        .foregroundStyle(.black)
+                                }
+                                .padding()
                             }
                         }
-                        .padding()
                     )
             }
         }
@@ -100,6 +154,6 @@ struct FlashcardListView: View {
 }
 
 #Preview {
-    FlashcardListView(deckType: .terms)
+    FlashcardListView(deckType: .saved)
         .environmentObject(FlashcardViewModel())
 }

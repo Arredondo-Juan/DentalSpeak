@@ -9,14 +9,14 @@ import Foundation
 
 enum SideMenuSections: Int, CaseIterable {
     case main
-//    case other
+    //    case other
     
     var sectionTitle: String {
         switch self {
         case .main:
             return "Main"
-//        case .other:
-//            return "Contact Us"
+            //        case .other:
+            //            return "Contact Us"
         }
     }
     
@@ -24,8 +24,8 @@ enum SideMenuSections: Int, CaseIterable {
         switch self {
         case .main:
             return [.terms, .phrases, .flashcards]
-//        case .other:
-//            return [.feedback]
+            //        case .other:
+            //            return [.feedback]
         }
     }
 }

@@ -54,8 +54,8 @@ private extension ContentView {
             return AnyView(PhrasesListView())
         case .flashcards:
             return AnyView(FlashcardDecksView())
-//        case .feedback:
-//            return AnyView(FeedbackFormView())
+            //        case .feedback:
+            //            return AnyView(FeedbackFormView())
             
         }
     }
@@ -68,8 +68,8 @@ private extension ContentView {
             return "Phrases"
         case .flashcards:
             return "Flashcards"
-//        case .feedback:
-//            return "Submit Feedback"
+            //        case .feedback:
+            //            return "Submit Feedback"
         }
     }
 }
