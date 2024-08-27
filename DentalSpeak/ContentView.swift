@@ -52,8 +52,11 @@ private extension ContentView {
             return AnyView(TermsListView())
         case .phrases:
             return AnyView(PhrasesListView())
+        case .favorites:
+            return AnyView(FavoritesListView())
         case .flashcards:
             return AnyView(FlashcardDecksView())
+            
             //        case .feedback:
             //            return AnyView(FeedbackFormView())
             
@@ -66,8 +69,11 @@ private extension ContentView {
             return "Terms"
         case .phrases:
             return "Phrases"
+        case .favorites:
+            return "Favorites"
         case .flashcards:
             return "Flashcards"
+            
             //        case .feedback:
             //            return "Submit Feedback"
         }

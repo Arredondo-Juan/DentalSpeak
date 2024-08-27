@@ -34,8 +34,12 @@ struct TermsListView: View {
                     ScrollView {
                         LazyVStack (spacing: 10) {
                             ForEach(filteredTerms) { flashcard in
-                                ListItemView(term: flashcard.term, definition: flashcard.definition) {
+                                ListItemView(term: flashcard.term,
+                                             definition: flashcard.definition,
+                                             isFavorited: viewModel.isFlashcardFavorited(flashcard)) {
                                     viewModel.speak(flashcard.definition)
+                                } onFavoriteTap: {
+                                    viewModel.toggleFavorite(flashcard)
                                 }
                                 .listRowSeparator(.hidden)
                             }

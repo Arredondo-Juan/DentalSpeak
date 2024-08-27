@@ -8,19 +8,20 @@
 import SwiftUI
 
 struct ListItemView: View {
-    
     var term: String
     var definition: String
+    var isFavorited: Bool
     var onSpeakerTap: () -> Void
+    var onFavoriteTap: () -> Void
     
     var body: some View {
         HStack {
-            VStack(alignment: .center) {
+            VStack(alignment: .leading) {
                 
                 Text(term)
                     .font(.system(size: 20, weight: .bold))
                     .foregroundColor(.mainText)
-                    .multilineTextAlignment(.center)
+                    .multilineTextAlignment(.leading)
                     .padding(.bottom, 0)
                     .padding(.horizontal)
                 
@@ -30,10 +31,20 @@ struct ListItemView: View {
                     Text(definition)
                         .font(.system(size: 16, weight: .bold))
                         .foregroundColor(.subText)
-                        .multilineTextAlignment(.center)
+                        .multilineTextAlignment(.leading)
                         .padding(.top, 0)
                         .padding(.horizontal)
                 }
+            }
+            
+            Spacer()
+            
+            Button(action: {
+                onFavoriteTap()
+            }) {
+                Image(systemName: isFavorited ? "star.fill" : "star")
+                    .foregroundColor(isFavorited ? .mainText : .mainText)
+                    .padding()
             }
         }
         .padding(.top, 3)

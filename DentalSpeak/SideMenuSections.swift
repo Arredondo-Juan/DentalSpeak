@@ -23,7 +23,7 @@ enum SideMenuSections: Int, CaseIterable {
     var options: [SideMenuOptionsModel] {
         switch self {
         case .main:
-            return [.terms, .phrases, .flashcards]
+            return [.terms, .phrases, .favorites, .flashcards]
             //        case .other:
             //            return [.feedback]
         }

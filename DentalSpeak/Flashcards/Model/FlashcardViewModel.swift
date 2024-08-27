@@ -11,12 +11,15 @@ class FlashcardViewModel: ObservableObject {
     @Published var termsDeck: [Flashcard] = []
     @Published var phrasesDeck: [Flashcard] = []
     @Published var savedDeck: [Flashcard] = []
+    @Published var favoritesDeck: [Flashcard] = [] // New property to track favorite flashcards
     
     @AppStorage("savedFlashcardTermsString") private var savedFlashcardTermsString: String = ""
+    @AppStorage("favoriteFlashcardTermsString") private var favoriteFlashcardTermsString: String = ""
     
     init() {
         loadFlashcards()
         loadSavedFlashcards()
+        loadFavoriteFlashcards()
     }
     
     func loadFlashcards() {
@@ -44,6 +47,18 @@ class FlashcardViewModel: ObservableObject {
         }
     }
     
+    func loadFavoriteFlashcards() {
+        if let data = favoriteFlashcardTermsString.data(using: .utf8) {
+            do {
+                let favoriteTerms = try JSONDecoder().decode([String].self, from: data)
+                favoritesDeck = termsDeck.filter { favoriteTerms.contains($0.term) } +
+                phrasesDeck.filter { favoriteTerms.contains($0.term) }
+            } catch {
+                print("Error decoding favorite flashcard terms: \(error)")
+            }
+        }
+    }
+    
     func saveFlashcard(_ flashcard: Flashcard) {
         if !savedDeck.contains(flashcard) {
             savedDeck.append(flashcard)
@@ -58,11 +73,13 @@ class FlashcardViewModel: ObservableObject {
         }
     }
     
-    func moveFlashcardToBack(_ flashcard: Flashcard) {
-        if let index = savedDeck.firstIndex(of: flashcard) {
-            let card = savedDeck.remove(at: index)
-            savedDeck.append(card)
+    func toggleFavorite(_ flashcard: Flashcard) {
+        if let index = favoritesDeck.firstIndex(of: flashcard) {
+            favoritesDeck.remove(at: index)
+        } else {
+            favoritesDeck.append(flashcard)
         }
+        updateFavoriteFlashcardsStorage()
     }
     
     func updateSavedFlashcardsStorage() {
@@ -73,12 +90,27 @@ class FlashcardViewModel: ObservableObject {
         }
     }
     
-    func isFlashcardSaved(_ flashcard: Flashcard) -> Bool {
-        if let data = savedFlashcardTermsString.data(using: .utf8) {
-            let savedTerms = (try? JSONDecoder().decode([String].self, from: data)) ?? []
-            return savedTerms.contains(flashcard.term)
+    func updateFavoriteFlashcardsStorage() {
+        let favoriteTerms = favoritesDeck.map { $0.term }
+        if let encodedData = try? JSONEncoder().encode(favoriteTerms),
+           let jsonString = String(data: encodedData, encoding: .utf8) {
+            favoriteFlashcardTermsString = jsonString
         }
-        return false
+    }
+    
+    func isFlashcardSaved(_ flashcard: Flashcard) -> Bool {
+        return savedDeck.contains(flashcard)
+    }
+    
+    func isFlashcardFavorited(_ flashcard: Flashcard) -> Bool {
+        return favoritesDeck.contains(flashcard)
+    }
+    
+    func moveFlashcardToBack(_ flashcard: Flashcard) {
+        if let index = savedDeck.firstIndex(of: flashcard) {
+            let card = savedDeck.remove(at: index)
+            savedDeck.append(card)
+        }
     }
     
     func speak(_ text: String) {

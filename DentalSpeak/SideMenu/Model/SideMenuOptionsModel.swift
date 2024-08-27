@@ -11,8 +11,8 @@ enum SideMenuOptionsModel: Int, CaseIterable {
     
     case terms
     case phrases
+    case favorites
     case flashcards
-    //    case feedback
     
     var title: String {
         switch self {
@@ -20,10 +20,11 @@ enum SideMenuOptionsModel: Int, CaseIterable {
             return "Terms"
         case .phrases:
             return "Phrases"
+        case .favorites:
+            return "Favorites"
         case .flashcards:
             return "Flashcards"
-            //        case .feedback:
-            //            return "dentalspeakapp-email"
+            
         }
     }
     
@@ -33,10 +34,10 @@ enum SideMenuOptionsModel: Int, CaseIterable {
             return "book"
         case .phrases:
             return "text.word.spacing"
+        case .favorites:
+            return "star.fill"
         case .flashcards:
             return "rectangle.stack"
-            //        case .feedback:
-            //            return "envelope"
         }
     }
 }

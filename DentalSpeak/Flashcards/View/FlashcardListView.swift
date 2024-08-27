@@ -27,7 +27,7 @@ struct FlashcardListView: View {
             
             VStack {
                 if flashcards.isEmpty {
-                    Text("No cards available")
+                    Text("No saved cards")
                         .foregroundColor(.gray)
                         .padding()
                 } else {
@@ -70,7 +70,7 @@ struct FlashcardListView: View {
                     .overlay(
                         VStack (spacing: 20) {
                             if deckType == .saved {
-                                // Saved Deck Overlay Content 
+                                // Saved Deck Overlay Content
                                 Text("Swipe left to move the card to the back of the deck and come back to it later.")
                                     .font(.headline)
                                     .foregroundColor(.white)
