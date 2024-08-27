@@ -39,7 +39,53 @@ struct FlashcardListView: View {
                             currentIndex += 1
                         }
                         
-                        Text("Cards left: \(flashcards.count - currentIndex)")
+                        if deckType != .saved {
+                            
+                            HStack(alignment: .center) {
+                                Button {
+                                    flashcards.sort { $0.term < $1.term }
+                                    currentIndex = 0
+                                } label: {
+                                    Image(systemName: "abc")
+                                        .bold()
+                                        .frame(width: 50)
+                                        .padding()
+                                      .foregroundColor(.mainText)
+                                      .background(.lightBlue)
+                                      .cornerRadius(100)
+                                }
+
+                                Button {
+                                    flashcards = flashcards.shuffled()
+                                    currentIndex = 0
+                                } label: {
+                                    Image(systemName: "shuffle")
+                                        .bold()
+                                        .frame(width: 50)
+                                        .padding()
+                                      .foregroundColor(.mainText)
+                                      .background(.lightBlue)
+                                      .cornerRadius(100)
+                                }
+                                
+                                Button {
+                                    loadFlashcards() // Reload original flashcards
+                                    currentIndex = 0
+                                } label: {
+                                    Image(systemName: "arrow.circlepath")
+                                        .bold()
+                                        .frame(width: 50)
+                                        .padding()
+                                      .foregroundColor(.mainText)
+                                      .background(.lightBlue)
+                                      .cornerRadius(100)
+                                }
+                                
+                            }
+                            .padding()
+                        }
+                        
+                        Text("Cards remaining: \(flashcards.count - currentIndex)")
                             .font(.headline)
                             .padding(.top)
                     } else {
