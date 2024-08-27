@@ -58,8 +58,8 @@ struct FlashcardListView: View {
                             currentIndex += 1
                         }
                         
-                        if deckType != .saved {
-                            HStack(alignment: .center) {
+                        HStack(alignment: .center) {
+                            if deckType != .saved {
                                 Button {
                                     flashcards.sort { $0.term < $1.term }
                                     currentIndex = 0
@@ -72,7 +72,7 @@ struct FlashcardListView: View {
                                         .background(.lightBlue)
                                         .cornerRadius(100)
                                 }
-
+                                
                                 Button {
                                     flashcards = flashcards.shuffled()
                                     currentIndex = 0
@@ -87,7 +87,7 @@ struct FlashcardListView: View {
                                 }
                                 
                                 Button {
-                                    loadFlashcards() // Reload original flashcards
+                                    loadFlashcards()
                                     currentIndex = 0
                                 } label: {
                                     Image(systemName: "arrow.circlepath")
@@ -99,8 +99,20 @@ struct FlashcardListView: View {
                                         .cornerRadius(100)
                                 }
                             }
-                            .padding()
+                            
+                            Button {
+                                toggleBookmark(flashcard: flashcards[currentIndex])
+                            } label: {
+                                Image(systemName: isFlashcardBookmarked(flashcard: flashcards[currentIndex]) ? "bookmark.fill" : "bookmark")
+                                    .bold()
+                                    .frame(width: 50)
+                                    .padding()
+                                    .foregroundColor(.mainText)
+                                    .background(.lightBlue)
+                                    .cornerRadius(100)
+                            }
                         }
+                        .padding()
                         
                         Text("Cards remaining: \(flashcards.count - currentIndex)")
                             .font(.headline)
@@ -117,7 +129,7 @@ struct FlashcardListView: View {
                                     .padding()
                                 
                                 Button {
-                                    loadFlashcards() // Reload original flashcards
+                                    loadFlashcards()
                                     currentIndex = 0
                                 } label: {
                                     Image(systemName: "arrow.circlepath")
@@ -156,44 +168,35 @@ struct FlashcardListView: View {
                         VStack (spacing: 20) {
                             if deckType == .saved {
                                 // Saved Deck Overlay Content
-                                Text("Swipe left to move the card to the back of the deck and come back to it later.")
-                                    .font(.headline)
-                                    .foregroundColor(.white)
-                                    .multilineTextAlignment(.center)
-                                    .padding(.bottom, 40)
-                                
-                                Text("Swipe right to remove the card from your Saved Deck.")
-                                    .font(.headline)
-                                    .foregroundColor(.white)
-                                    .multilineTextAlignment(.center)
-                                    .padding()
+                                VStack {
+                                    Text("Swipe through your saved flashcards.")
+                                        .font(.headline)
+                                        .foregroundColor(.white)
+                                        .multilineTextAlignment(.center)
+                                        .padding(.bottom, 40)
+                                    
+                                    Text("Remove them by tapping the bookmark button.")
+                                        .font(.headline)
+                                        .foregroundColor(.white)
+                                        .multilineTextAlignment(.center)
+                                        .padding()
+                                }
                             } else {
                                 // Terms/Phrases Deck Overlay Content
-                                HStack {
-                                    Image("swipeleft")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 140, height: 140)
-                                    Spacer()
+                                VStack {
+                                    Text("Swipe on the flashcard to go to the next one.")
+                                        .font(.headline)
+                                        .foregroundColor(.white)
+                                        .multilineTextAlignment(.center)
+                                        .padding()
+                                        .padding(.bottom, 40)
+                                    
+                                    Text("Change the order, save, or reload the flashcards!")
+                                        .font(.headline)
+                                        .foregroundColor(.white)
+                                        .multilineTextAlignment(.center)
+                                        .padding()
                                 }
-                                Text("Swipe left on a flashcard to add it to your Saved Deck.")
-                                    .font(.headline)
-                                    .foregroundColor(.white)
-                                    .multilineTextAlignment(.center)
-                                    .padding(.bottom, 40)
-                                
-                                HStack {
-                                    Spacer()
-                                    Image("swiperight")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 140, height: 140)
-                                }
-                                Text("Swipe right on a flashcard to go to the next card.")
-                                    .font(.headline)
-                                    .foregroundColor(.white)
-                                    .multilineTextAlignment(.center)
-                                    .padding()
                             }
                             
                             Button(action: {
@@ -230,13 +233,26 @@ struct FlashcardListView: View {
         switch deckType {
         case .terms:
             flashcards = viewModel.termsDeck
-            currentIndex = 0 // Reset the index when reloading the flashcards
+            currentIndex = 0
         case .phrases:
             flashcards = viewModel.phrasesDeck
-            currentIndex = 0 // Reset the index when reloading the flashcards
+            currentIndex = 0
         case .saved:
             flashcards = viewModel.savedDeck
         }
+    }
+    
+    private func toggleBookmark(flashcard: Flashcard) {
+        if viewModel.isFlashcardSaved(flashcard) {
+            viewModel.removeFlashcard(flashcard)
+            flashcards.removeAll { $0.id == flashcard.id }
+        } else {
+            viewModel.saveFlashcard(flashcard)
+        }
+    }
+    
+    private func isFlashcardBookmarked(flashcard: Flashcard) -> Bool {
+        return viewModel.isFlashcardSaved(flashcard)
     }
 }
 

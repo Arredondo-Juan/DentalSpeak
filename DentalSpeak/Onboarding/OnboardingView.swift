@@ -33,7 +33,7 @@ struct OnboardingView: View {
                 }
                 .tag(1)
                 
-                OnboardingViewDetails(gradientColorOne: Color.lightBlue, gradientColorTwo: Color.mediumBlue, imageName: "dentist-study", headline: "Save and Study", subheadline: "Add flashcards to your custom Saved Deck to review later", buttonColor: Color.lightBlue) {
+                OnboardingViewDetails(gradientColorOne: Color.lightBlue, gradientColorTwo: Color.mediumBlue, imageName: "dentist-study", headline: "Save and Study", subheadline: "Add terms and phrases to your Favorites tab and add flashcards to your custom Saved Deck to review later", buttonColor: Color.lightBlue) {
                     withAnimation {
                         dismiss()
                         needsOnboarding = false

@@ -54,29 +54,13 @@ struct DraggableCardView: View {
                 .onEnded { _ in
                     if abs(self.offset.width) > 100 {
                         withAnimation(.easeInOut) {
-                            if self.offset.width > 0 {
-                                // Swipe right
-                                if isInSavedDeck {
-                                    // Remove from saved deck
-                                    viewModel.removeFlashcard(flashcard)
-                                    flashcards.removeAll { $0.id == flashcard.id }
-                                } else {
-                                    // Dismiss the card
-                                    flashcards.removeAll { $0.id == flashcard.id }
-                                }
+                            if isInSavedDeck {
+                                // Move to the back of the saved deck
+                                flashcards.removeAll { $0.id == flashcard.id }
+                                flashcards.append(flashcard)
                             } else {
-                                // Swipe left
-                                if isInSavedDeck {
-                                    // Move to the back of the saved deck
-                                    viewModel.moveFlashcardToBack(flashcard)
-                                    // Remove and re-append to simulate moving to the back
-                                    flashcards.removeAll { $0.id == flashcard.id }
-                                    flashcards.append(flashcard)
-                                } else {
-                                    // Save the card and remove from the original deck
-                                    viewModel.saveFlashcard(flashcard)
-                                    flashcards.removeAll { $0.id == flashcard.id }
-                                }
+                                // Dismiss the card
+                                flashcards.removeAll { $0.id == flashcard.id }
                             }
                             self.offset = .zero
                         }
