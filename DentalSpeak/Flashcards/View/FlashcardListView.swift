@@ -27,9 +27,28 @@ struct FlashcardListView: View {
             
             VStack {
                 if flashcards.isEmpty {
-                    Text("No saved cards")
-                        .foregroundColor(.gray)
-                        .padding()
+                    if deckType == .saved {
+                        Text("No saved cards")
+                            .foregroundColor(.gray)
+                            .padding()
+                    } else {
+                        Button {
+                            loadFlashcards()
+                            currentIndex = 0
+                        } label: {
+                            Image(systemName: "arrow.circlepath")
+                                .bold()
+                                .frame(width: 50)
+                                .padding()
+                                .foregroundColor(.mainText)
+                                .background(.lightBlue)
+                                .cornerRadius(100)
+                        }
+                        Text("Reload flashcards")
+                            .foregroundColor(.mainText)
+                            .bold()
+                            .padding()
+                    }
                 } else {
                     if currentIndex < flashcards.count {
                         DraggableCardView(flashcards: $flashcards,
@@ -40,7 +59,6 @@ struct FlashcardListView: View {
                         }
                         
                         if deckType != .saved {
-                            
                             HStack(alignment: .center) {
                                 Button {
                                     flashcards.sort { $0.term < $1.term }
@@ -50,9 +68,9 @@ struct FlashcardListView: View {
                                         .bold()
                                         .frame(width: 50)
                                         .padding()
-                                      .foregroundColor(.mainText)
-                                      .background(.lightBlue)
-                                      .cornerRadius(100)
+                                        .foregroundColor(.mainText)
+                                        .background(.lightBlue)
+                                        .cornerRadius(100)
                                 }
 
                                 Button {
@@ -63,9 +81,9 @@ struct FlashcardListView: View {
                                         .bold()
                                         .frame(width: 50)
                                         .padding()
-                                      .foregroundColor(.mainText)
-                                      .background(.lightBlue)
-                                      .cornerRadius(100)
+                                        .foregroundColor(.mainText)
+                                        .background(.lightBlue)
+                                        .cornerRadius(100)
                                 }
                                 
                                 Button {
@@ -76,11 +94,10 @@ struct FlashcardListView: View {
                                         .bold()
                                         .frame(width: 50)
                                         .padding()
-                                      .foregroundColor(.mainText)
-                                      .background(.lightBlue)
-                                      .cornerRadius(100)
+                                        .foregroundColor(.mainText)
+                                        .background(.lightBlue)
+                                        .cornerRadius(100)
                                 }
-                                
                             }
                             .padding()
                         }
@@ -89,9 +106,31 @@ struct FlashcardListView: View {
                             .font(.headline)
                             .padding(.top)
                     } else {
-                        Text("You've gone through all the cards!")
-                            .font(.headline)
-                            .padding()
+                        if deckType == .saved {
+                            Text("No saved cards")
+                                .foregroundColor(.gray)
+                                .padding()
+                        } else {
+                            VStack {
+                                Text("You've gone through all the cards!")
+                                    .font(.headline)
+                                    .padding()
+                                
+                                Button {
+                                    loadFlashcards() // Reload original flashcards
+                                    currentIndex = 0
+                                } label: {
+                                    Image(systemName: "arrow.circlepath")
+                                        .bold()
+                                        .frame(width: 50)
+                                        .padding()
+                                        .foregroundColor(.mainText)
+                                        .background(.lightBlue)
+                                        .cornerRadius(100)
+                                }
+                                .padding(.top)
+                            }
+                        }
                     }
                 }
             }
@@ -191,13 +230,16 @@ struct FlashcardListView: View {
         switch deckType {
         case .terms:
             flashcards = viewModel.termsDeck
+            currentIndex = 0 // Reset the index when reloading the flashcards
         case .phrases:
             flashcards = viewModel.phrasesDeck
+            currentIndex = 0 // Reset the index when reloading the flashcards
         case .saved:
             flashcards = viewModel.savedDeck
         }
     }
 }
+
 
 #Preview {
     FlashcardListView(deckType: .saved)
